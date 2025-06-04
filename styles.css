@@ -1,0 +1,227 @@
+/* ======== RESET ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======== TYPOGRAPHY & BASE ======== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* ======== CONTAINER ======== */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* ======== NAVBAR ======== */
+.navbar {
+  background: #0055a2;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+.navbar .logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+}
+.navbar .nav-links li {
+  margin-left: 1.5rem;
+}
+.navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.navbar .nav-links a:hover {
+  color: #ffdd57;
+}
+
+/* ======== HERO SECTION ======== */
+#hero {
+  background: url('assets/hero-bg.jpg') no-repeat center center/cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+#hero .hero-container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+}
+.btn.btn-primary {
+  background: #ffdd57;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.3rem;
+  transition: background 0.2s;
+}
+.btn.btn-primary:hover {
+  background: #e6c848;
+}
+
+/* ======== SECTIONS ======== */
+section {
+  padding: 3rem 0;
+}
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0055a2;
+}
+
+/* ======== ABOUT SECTION ======== */
+#about p {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+/* ======== RESUME SECTION ======== */
+#resume .resume-section {
+  margin-bottom: 2rem;
+}
+#resume h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #0055a2;
+  border-bottom: 2px solid #0055a2;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+#resume .contact-info ul {
+  list-style: none;
+}
+#resume .contact-info li {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+#resume .contact-info a {
+  color: #0055a2;
+  text-decoration: none;
+}
+#resume .contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Two-column list (for Technical Skills) */
+.two-column-list {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style: none;
+}
+.two-column-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Resume item styling */
+#resume ul,
+#resume ol {
+  margin-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+#resume ul li,
+#resume ol li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+#resume h4 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+#resume em {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* ======== PUBLICATIONS ======== */
+#publications ol {
+  margin-left: 1rem;
+}
+#publications li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ======== CONTACT SECTION ======== */
+#contact p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+#contact a {
+  color: #0055a2;
+  text-decoration: none;
+}
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* ======== FOOTER ======== */
+footer {
+  background: #0055a2;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+  }
+  .navbar .nav-links {
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+  .navbar .nav-links li {
+    margin: 0.5rem 0;
+  }
+  .two-column-list {
+    columns: 1;
+  }
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+  #hero p {
+    font-size: 1rem;
+  }
+}
