@@ -4,327 +4,314 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Soheil Sepahyar, Ph.D. | VR, Graphics, HCI</title>
-  <meta name="description" content="Soheil Sepahyar, Ph.D. Lecturer at UMass Boston. VR/AR, graphics, eye tracking, distance perception, and simulation for robotics." />
-  <link rel="canonical" href="https://soheilappear.github.io/soheilsepahyar/" />
-
+  <meta name="description" content="Soheil Sepahyar, Ph.D. Lecturer at UMass Boston. VR perception, gaze-aware rendering, and simulation/ML tooling." />
+  <meta name="color-scheme" content="light dark" />
   <meta property="og:title" content="Soheil Sepahyar, Ph.D." />
-  <meta property="og:description" content="VR/AR, graphics, eye tracking, distance perception, and simulation." />
+  <meta property="og:description" content="VR perception, gaze-aware rendering, and simulation/ML tooling." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://soheilappear.github.io/soheilsepahyar/" />
   <meta property="og:image" content="Soheil_Sepahyar.jpg" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
-
+  <meta name="theme-color" content="#0b1220" />
   <link rel="stylesheet" href="styles.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Soheil Sepahyar",
-    "honorificSuffix": "Ph.D.",
-    "jobTitle": "Lecturer in Computer Science",
-    "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Massachusetts Boston"},
-    "url": "https://soheilappear.github.io/soheilsepahyar/",
-    "sameAs": [
-      "https://www.linkedin.com/in/soheil-sepahyar/",
-      "https://github.com/soheilAppear",
-      "https://scholar.google.com/citations?user=JXdvsmMAAAAJ&hl=en&oi=ao"
-    ]
-  }
-  </script>
 </head>
 
 <body>
-  <a class="skip-link" href="#content">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <header class="topbar" role="banner">
-    <div class="wrap topbar-inner">
-      <a class="topbar-name" href="#top">Soheil Sepahyar</a>
-      <nav class="topbar-nav" aria-label="Primary">
+  <div class="shell">
+    <aside class="sidebar" aria-label="Profile and navigation">
+      <div class="brand">
+        <a class="name" href="#top">Soheil Sepahyar</a>
+        <div class="tagline">Ph.D. | Lecturer, UMass Boston</div>
+      </div>
+
+      <figure class="avatar">
+        <img src="Soheil_Sepahyar.jpg" alt="Portrait of Soheil Sepahyar" width="480" height="480" loading="eager" />
+      </figure>
+
+      <ul class="meta" aria-label="Quick facts">
+        <li><strong>Focus</strong>: VR/AR, graphics, eye tracking</li>
+        <li><strong>Research</strong>: distance perception, foveated rendering</li>
+        <li><strong>Tools</strong>: Unity, OpenGL/GLSL, Python</li>
+        <li><strong>Status</strong>: U.S. Permanent Resident</li>
+      </ul>
+
+      <div class="cta">
+        <a class="btn" href="resume.pdf">CV (PDF)</a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+
+      <nav class="nav" aria-label="Sections">
         <a href="#about">About</a>
-        <a href="#work">Work</a>
+        <a href="#projects">Selected work</a>
         <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
         <a href="#service">Service</a>
-        <a href="#teaching">Teaching</a>
         <a href="#honors">Honors</a>
-        <a class="topbar-cta" href="resume.pdf" target="_blank" rel="noopener">CV</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top" class="wrap layout">
-    <aside class="sidebar" aria-label="Profile">
-      <img class="avatar" src="Soheil_Sepahyar.jpg" alt="Portrait of Soheil Sepahyar" loading="lazy" />
-
-      <div class="identity">
-        <h1>Soheil Sepahyar, Ph.D.</h1>
-        <p class="tagline">
-          Lecturer, UMass Boston. VR/AR, graphics, eye tracking, perception, simulation.
-        </p>
-      </div>
-
-      <div class="links" aria-label="Links">
-        <a class="link" href="resume.pdf" target="_blank" rel="noopener">CV (PDF)</a>
-        <a class="link" href="mailto:sepahyarsoheil@gmail.com">sepahyarsoheil@gmail.com</a>
-        <a class="link" href="https://www.linkedin.com/in/soheil-sepahyar/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="link" href="https://github.com/soheilAppear" target="_blank" rel="noopener">GitHub</a>
-        <a class="link" href="https://scholar.google.com/citations?user=JXdvsmMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
-      </div>
-
-      <div class="meta">
-        <div class="meta-row"><span class="k">Location</span><span class="v">Boston, MA</span></div>
-        <div class="meta-row"><span class="k">Status</span><span class="v">U.S. Permanent Resident</span></div>
-      </div>
-
-      <nav class="toc" aria-label="On this page">
-        <a href="#about">About</a>
-        <a href="#work">Current work</a>
-        <a href="#experience">Experience</a>
-        <a href="#publications">Publications</a>
-        <a href="#service">Service</a>
         <a href="#teaching">Teaching</a>
-        <a href="#honors">Honors</a>
-        <a href="#contact">Contact</a>
       </nav>
+
+      <div class="links" aria-label="External links">
+        <a href="https://github.com/soheilAppear" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/soheil-sepahyar" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=JXdvsmMAAAAJ" rel="noopener noreferrer">Scholar</a>
+      </div>
     </aside>
 
-    <section id="content" class="content" aria-label="Main content">
-      <section class="section" id="about">
+    <main id="main" class="content" aria-label="Main content">
+      <header class="hero" id="top">
+        <h1>Research and engineering at the intersection of human perception and real-time simulation.</h1>
+        <p>
+          I build VR systems that can be evaluated rigorously, from gaze-aware rendering prototypes (eye-tracked foveated rendering and blur control)
+          to data pipelines for simulation-driven robotics learning.
+        </p>
+
+        <div class="highlights" role="list" aria-label="Highlights">
+          <div class="pill" role="listitem">
+            <div class="k">Perception studies</div>
+            <div class="v">130+ participants, 70 Hz tracking pipelines</div>
+          </div>
+          <div class="pill" role="listitem">
+            <div class="k">VR distance accuracy</div>
+            <div class="v">Improved from about 80% to 97%+</div>
+          </div>
+          <div class="pill" role="listitem">
+            <div class="k">Industry impact</div>
+            <div class="v">26,500 plots generated in under 5 minutes</div>
+          </div>
+        </div>
+      </header>
+
+      <section id="about" class="section">
         <h2>About</h2>
         <p>
-          I work at the intersection of perceptual science and real-time rendering. My background is in VR distance perception,
-          controlled experiments, and the software pipelines required to run studies reliably at interactive frame rates.
-        </p>
-        <p>
-          Recently, I have been extending this foundation toward gaze-aware rendering (eye-tracked foveated rendering and blur control),
-          and toward simulation and data collection pipelines that support robotics learning in environments like Isaac Sim.
+          My background combines experimental VR research and production-minded software development.
+          In my Ph.D. work at Michigan Technological University, I studied distance perception in VR and built custom algorithms and tooling
+          to process and analyze high-frequency behavioral data. In industry (Visteon), I applied ML, data engineering, and systems integration
+          skills to reduce engineering cycle time and improve repeatability.
         </p>
 
-        <div class="callouts">
-          <div class="callout">
-            <div class="callout-title">Core strengths</div>
-            <ul>
-              <li>Unity VR prototyping with robust experiment logic</li>
-              <li>Graphics systems and shader work (OpenGL / GLSL, Unity shaders)</li>
-              <li>End-to-end experiment pipelines (instrumentation, logging, analysis)</li>
-              <li>Applied ML and analytics experience from industry internships</li>
-            </ul>
-          </div>
-
-          <div class="callout">
-            <div class="callout-title">Tooling</div>
-            <ul>
-              <li>Unity, C#, shaders</li>
-              <li>Python (NumPy, SciPy, Pandas)</li>
-              <li>OpenGL / GLSL</li>
-              <li>Data logging and analysis workflows</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="work">
-        <h2>Current work</h2>
-
-        <div class="item">
-          <h3>Gaze-aware rendering for distance perception</h3>
-          <p class="muted">
-            Eye-tracked foveated rendering and gaze-contingent blur control in Unity, targeting perceptual evaluation in VR distance judgment tasks.
-          </p>
+        <div class="callout">
+          <div class="callout-title">What I enjoy building</div>
           <ul>
-            <li>Meta Quest Pro eye tracking integration</li>
-            <li>Stable smoothing and parameterization for experimental conditions</li>
-            <li>Data logging and analysis-ready outputs</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h3>VR to Isaac Sim data pipelines for robot learning</h3>
-          <p class="muted">
-            Human-in-the-loop teleoperation and demonstration collection to evaluate whether VR data improves learning on manipulation tasks.
-          </p>
-          <ul>
-            <li>Interaction design for reliable demonstrations</li>
-            <li>Structured datasets for training and evaluation</li>
-            <li>Simulation and validation mindset (repeatable runs)</li>
+            <li>Gaze-contingent rendering systems with stable, testable parameterizations</li>
+            <li>Simulation and data collection pipelines that produce training-ready datasets</li>
+            <li>Tools that replace error-prone manual workflows with fast, reproducible automation</li>
           </ul>
         </div>
       </section>
 
-      <section class="section" id="experience">
+      <section id="projects" class="section">
+        <h2>Selected work</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Gaze-aware rendering for distance perception</h3>
+            <p>
+              Eye-tracked foveated rendering and gaze-contingent blur control in Unity, targeting perceptual evaluation for distance judgment tasks.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Unity</li><li>C#</li><li>Shaders</li><li>Quest Pro</li>
+            </ul>
+            <ul class="bullets">
+              <li>Robust smoothing and condition control for experiments</li>
+              <li>Logging that stays analysis-ready for Python/R pipelines</li>
+              <li>Designed to reduce discomfort and preserve task-relevant detail</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>VR to Isaac Sim demonstration pipelines</h3>
+            <p>
+              Human-in-the-loop teleoperation and demonstration collection to evaluate how VR data can support robot learning for manipulation.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>VR UI</li><li>Simulation</li><li>Dataset design</li><li>Validation</li>
+            </ul>
+            <ul class="bullets">
+              <li>Interaction design for consistent demonstrations</li>
+              <li>Structured datasets for training and evaluation</li>
+              <li>Repeatable runs and metrics-first iteration</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>V-PEDAT: automated bench analytics (Visteon)</h3>
+            <p>
+              A Python desktop tool that ingests hundreds of CSV logs and generates thousands of plots and summaries for engineering validation.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li><li>Tkinter</li><li>Pandas</li><li>Matplotlib</li>
+            </ul>
+            <ul class="bullets">
+              <li>Automated 26,500+ graphs and data checks</li>
+              <li>Reduced multi-day manual work to minutes</li>
+              <li>Improved repeatability and onboarding for new team members</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
         <h2>Experience</h2>
 
-        <div class="item">
-          <h3>Lecturer in Computer Science, University of Massachusetts Boston</h3>
-          <div class="muted">2024 to present</div>
-          <ul>
-            <li>Teach large-enrollment and upper-level courses across core CS topics</li>
-            <li>Design projects, exams, and scalable grading workflows</li>
-            <li>Mentor student work spanning theory, systems, and VR prototypes</li>
-          </ul>
+        <div class="timeline">
+          <div class="item">
+            <div class="when">2024 to present</div>
+            <div class="what">
+              <h3>Lecturer in Computer Science, UMass Boston</h3>
+              <ul>
+                <li>Teach large-enrollment and upper-level courses across core CS topics</li>
+                <li>Design projects, exams, and scalable grading workflows</li>
+                <li>Mentor student work spanning theory, systems, and VR prototypes</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="when">2019 to 2023</div>
+            <div class="what">
+              <h3>Ph.D. Researcher (VR and Perception), Michigan Technological University</h3>
+              <ul>
+                <li>Dissertation: The impact of pre-experiment walking on distance perception in VR</li>
+                <li>Ran controlled VR studies and built experiment software and analysis pipelines</li>
+                <li>Processed 70 Hz HMD tracking data; developed cumulative distance, turning-point, and step-detection algorithms</li>
+                <li>Quantified blind-walking effects, improving distance judgment accuracy from about 80% to 97%+</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="when">2020 to 2022</div>
+            <div class="what">
+              <h3>Visteon Corporation (3 co-op terms)</h3>
+              <ul>
+                <li><strong>Co-op III (2022)</strong>: technical lead intern for validation analytics (V-PEDAT) and cross-functional bench workflows</li>
+                <li><strong>Co-op II (2021)</strong>: DMS algorithm optimization and embedded integration; testing on Mahindra benches with Leica 3D Disto lidar</li>
+                <li><strong>Co-op I (2020)</strong>: monocular depth estimation pipelines; converted 60,000+ samples and ran PackNet training with Dockerized workflows</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="item">
-          <h3>Ph.D. Researcher, Michigan Technological University</h3>
-          <div class="muted">2019 to 2023</div>
-          <ul>
-            <li>Thesis: the impact of pre-experiment walking on distance perception in VR</li>
-            <li>Designed controlled VR studies and built experiment software and analysis pipelines</li>
-            <li>Collected and analyzed high-frequency HMD tracking data (about 70 Hz) across 130+ participants</li>
-            <li>Quantified pre-experiment blind walking effects, improving distance judgment accuracy from about 80% to 97%+</li>
-          </ul>
-
-          <details class="details">
-            <summary>Methods and algorithms (selected)</summary>
-            <ul>
-              <li>Cumulative distance integration: computed true walked distance by integrating path deviations</li>
-              <li>Turning point detection: identified meaningful turns using angular velocity signals</li>
-              <li>Step detection: filtering plus <code>scipy.signal.find_peaks</code> on vertical HMD motion</li>
-              <li>Reusable tooling: Python modules for data processing and visualization</li>
-            </ul>
-          </details>
-        </div>
-
-        <div class="item">
-          <h3>Visteon Corporation (3 Co-op terms)</h3>
-          <div class="muted">2020 to 2022</div>
-          <ul>
-            <li>Applied ML, data engineering, and system integration to automotive workflows</li>
-            <li>Progressed from foundational AI research to technical lead responsibilities</li>
-            <li>Delivered production-minded tools that reduced multi-day analysis cycles to minutes</li>
-          </ul>
-
-          <details class="details">
-            <summary>Co-op III (Summer 2022): Product Design Technical Lead Intern</summary>
-            <ul>
-              <li>Built V-PEDAT, a Python desktop application (Tkinter, Pandas, Matplotlib) to automate analysis</li>
-              <li>Automated processing of 26,500+ data points and graphs previously handled manually</li>
-              <li>Impact: reduced analysis time from multiple days to under 5 minutes</li>
-            </ul>
-          </details>
-
-          <details class="details">
-            <summary>Co-op II (Summer 2021): AI and System Integration Engineering</summary>
-            <ul>
-              <li>Optimized a DMS-related algorithm using <code>sin(2x) = 2sin(x)cos(x)</code> for efficient arm-angle detection</li>
-              <li>Worked with Leica 3D Disto lidar hardware and conducted testing on Mahindra test benches</li>
-              <li>Skills: Python, C, Bash, Docker, embedded testing, computer vision</li>
-            </ul>
-          </details>
-
-          <details class="details">
-            <summary>Co-op I (Summer 2020): Foundational AI Research</summary>
-            <ul>
-              <li>Built monocular depth estimation data pipelines, converting 60,000+ images from <code>.npz</code> into CNN-ready datasets</li>
-              <li>Trained PackNet models using Keras and TensorFlow, managed reproducible runs with Docker</li>
-            </ul>
-          </details>
-        </div>
+        <p class="note">Full detail is in the CV PDF.</p>
       </section>
 
-      <section class="section" id="publications">
+      <section id="publications" class="section">
         <h2>Publications</h2>
-        <p class="muted">Selected work. Full list on Google Scholar.</p>
-
-        <ol class="pubs">
+        <ul class="pubs">
           <li>
-            <div class="pub-title">VR Distance Judgements (ACM SAP 2022)</div>
-            <div class="pub-links">
-              <a href="https://dl.acm.org/doi/abs/10.1145/3548814.3551463" target="_blank" rel="noopener">ACM DL</a>
-            </div>
+            <span class="venue">ACM SAP 2022</span>
+            <span class="title">VR Distance Judgments are Affected by the Amount of Pre-Experiment Blind Walking</span>
           </li>
           <li>
-            <div class="pub-title">Brightness vs. Distance Judgements (ACM SAP 2020)</div>
-            <div class="pub-links">
-              <a href="https://dl.acm.org/doi/abs/10.1145/3385955.3407929" target="_blank" rel="noopener">ACM DL</a>
-            </div>
+            <span class="venue">ACM SAP 2020</span>
+            <span class="title">Effects of Brightness on Distance Judgments in Head-Mounted Displays</span>
           </li>
           <li>
-            <div class="pub-title">Sorting Algorithm Comparison (ACM ACAI 2019)</div>
-            <div class="pub-links">
-              <a href="https://dl.acm.org/doi/abs/10.1145/3377713.3377808" target="_blank" rel="noopener">ACM DL</a>
-            </div>
+            <span class="venue">ACM ACAI 2019</span>
+            <span class="title">Comparing Four Sorting Algorithms with Different Data Sizes Based on Time Complexity</span>
           </li>
-        </ol>
-
-        <p class="muted">
-          <a href="https://scholar.google.com/citations?user=JXdvsmMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+        </ul>
+        <p class="note">
+          For the most up-to-date list, see <a href="https://scholar.google.com/citations?hl=en&user=JXdvsmMAAAAJ" rel="noopener noreferrer">Google Scholar</a>.
         </p>
       </section>
 
-      <section class="section" id="service">
+      <section id="service" class="section">
         <h2>Service</h2>
-        <div class="item">
-          <h3>Program committee</h3>
-          <ul>
-            <li>ACM Symposium on Applied Perception (SAP) Program Committee (2025, 2026)</li>
-          </ul>
-          <p class="muted">
-            <a href="https://sap.acm.org/2025/" target="_blank" rel="noopener">SAP 2025</a>
-          </p>
-        </div>
 
-        <div class="item">
-          <h3>Reviewer</h3>
-          <ul>
-            <li>IEEE VR 2023, IEEE VR 2024</li>
-            <li>ACM VRST 2023, ACM VRST 2024</li>
-            <li>PeerJ (paper reviewer)</li>
-          </ul>
-        </div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Program committees</h3>
+            <ul>
+              <li>ACM Symposium on Applied Perception (SAP) Program Committee (2025, 2026)</li>
+            </ul>
+            <p class="small">
+              Reviewed submissions, led discussions, wrote meta-reviews, and shepherded conditionally accepted papers to final acceptance.
+            </p>
+          </div>
 
-        <div class="item">
-          <h3>Volunteering</h3>
-          <ul>
-            <li>ACM SIGGRAPH 2024, Student Volunteer</li>
-            <li>AWE USA 2025, Volunteer</li>
-          </ul>
-        </div>
-      </section>
+          <div class="panel">
+            <h3>Reviewing</h3>
+            <ul>
+              <li>IEEE VR 2023, 2024</li>
+              <li>ACM VRST 2023, 2024</li>
+              <li>PeerJ (paper reviewer)</li>
+            </ul>
+          </div>
 
-      <section class="section" id="teaching">
-        <h2>Teaching</h2>
-        <div class="item">
-          <h3>Courses</h3>
-          <ul>
-            <li>CS420: Theory of Computation (Rocq / Coq for formal reasoning)</li>
-            <li>CS450: Structure of Higher Level Programming Languages (Racket and functional programming)</li>
-            <li>CS240: Programming in C</li>
-            <li>CS210: Data Structures</li>
-            <li>CS110: Introduction to Computing</li>
-            <li>CS220: Discrete Mathematics</li>
-          </ul>
+          <div class="panel">
+            <h3>Volunteering</h3>
+            <ul>
+              <li>ACM SIGGRAPH 2024, Student Volunteer</li>
+              <li>AWE USA 2025, Volunteer</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section class="section" id="honors">
+      <section id="honors" class="section">
         <h2>Honors</h2>
-        <ul>
-          <li>Finishing Fellowship (Ph.D.), 2023</li>
-          <li> Business Opportunity Recognition (Certificate of Achievement) The Beckendorf Family Center for Innovation and Global Entrepreneurship and University of the Incarnate Word</li>
+        <ul class="bullets">
+          <li>Finishing Fellowship Grant, Michigan Tech (2023)</li>
+          <li>Business Opportunity Recognition Certificate (2023)</li>
         </ul>
       </section>
 
-      <section class="section" id="contact">
-        <h2>Contact</h2>
+      <section id="teaching" class="section">
+        <h2>Teaching</h2>
         <p>
-          Email is best: <a href="mailto:sepahyarsoheil@gmail.com">sepahyarsoheil@gmail.com</a>.
-          You can also reach me via <a href="https://www.linkedin.com/in/soheil-sepahyar/" target="_blank" rel="noopener">LinkedIn</a>.
+          I like teaching fundamentals that transfer to real systems, with clear decomposition and testable implementations.
         </p>
 
-        <footer class="footer">
-          <span>© <span id="year"></span> Soheil Sepahyar</span>
-        </footer>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Highlighted courses</h3>
+            <ul>
+              <li><strong>CS420</strong>: Theory of Computation (Rocq/Coq for formal reasoning)</li>
+              <li><strong>CS450</strong>: Structure of Higher Level Programming Languages (Racket, functional programming)</li>
+              <li><strong>CS240</strong>: Programming in C</li>
+              <li><strong>CS210</strong>: Data Structures</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>At scale</h3>
+            <ul>
+              <li>Autograding and consistent rubrics for fairness</li>
+              <li>Course infrastructure that supports large enrollment</li>
+              <li>Practical, industry-aligned assignments</li>
+            </ul>
+          </div>
+        </div>
       </section>
-    </section>
-  </main>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="contact">
+          <div>
+            <div class="label">Email</div>
+            <a href="mailto:sepahyarsoheil@gmail.com">sepahyarsoheil@gmail.com</a>
+          </div>
+          <div>
+            <div class="label">Links</div>
+            <a href="https://www.linkedin.com/in/soheil-sepahyar" rel="noopener noreferrer">LinkedIn</a>
+            <span class="sep">|</span>
+            <a href="https://github.com/soheilAppear" rel="noopener noreferrer">GitHub</a>
+            <span class="sep">|</span>
+            <a href="https://scholar.google.com/citations?hl=en&user=JXdvsmMAAAAJ" rel="noopener noreferrer">Scholar</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© <span id="y"></span> Soheil Sepahyar</span>
+      </footer>
+    </main>
+  </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
