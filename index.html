@@ -1,361 +1,355 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Soheil Sepahyar, Ph.D. | UMass Boston</title>
-  <meta name="description" content="Soheil Sepahyar, Ph.D. VR AR and AI researcher and lecturer at UMass Boston. Distance perception, foveated rendering, HCI, and robot learning with Isaac Sim." />
+  <title>Soheil Sepahyar, Ph.D. | VR • Graphics • HCI</title>
+  <meta name="description" content="Soheil Sepahyar, Ph.D. Lecturer at UMass Boston. VR/AR, graphics, eye tracking, distance perception, and simulation for robotics." />
   <link rel="canonical" href="https://soheilappear.github.io/soheilsepahyar/" />
 
-  <!-- Icons and fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Soheil Sepahyar, Ph.D." />
-  <meta property="og:description" content="VR AR and AI researcher and lecturer at UMass Boston" />
+  <meta property="og:description" content="VR/AR, graphics, eye tracking, distance perception, and simulation." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://soheilappear.github.io/soheilsepahyar/" />
   <meta property="og:image" content="Soheil_Sepahyar.jpg" />
 
-  <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f172a;
-      --muted:#94a3b8;
-      --text:#eef2ff;
-      --brand:#38bdf8;
-      --brand-2:#22d3ee;
-      --accent:#a78bfa;
-      --max:1100px;
-      --radius:16px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 10% -10%,rgba(56,189,248,.15),transparent),radial-gradient(1000px 500px at 90% -20%,rgba(167,139,250,.12),transparent),var(--bg)}
-    a{color:var(--brand)}
-    .container{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
-    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:16px;top:16px;width:auto;height:auto;background:#111;color:#fff;padding:10px;border-radius:8px;z-index:999}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
 
-    /* Nav */
-    .navbar{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700}
-    .brand img{width:36px;height:36px;border-radius:50%;object-fit:cover}
-    .nav-links{display:flex;gap:20px}
-    .nav-links a{color:var(--text);text-decoration:none;opacity:.9}
-    .nav-links a:hover{opacity:1}
-    .menu-btn{display:none;border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--text);padding:8px 10px;border-radius:10px}
+  <link rel="stylesheet" href="styles.css" />
 
-    /* Hero */
-    #hero{position:relative;isolation:isolate}
-    .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:72px 0}
-    .hero-blob{position:absolute;inset:-80px -40px auto -40px;z-index:-1;filter:blur(50px);opacity:.35;pointer-events:none;background:radial-gradient(600px 300px at 20% 10%,var(--brand),transparent),radial-gradient(600px 300px at 80% 0,var(--accent),transparent)}
-    .hero h1{font-size:48px;line-height:1.05;margin:0 0 10px}
-    .hero p{max-width:60ch;color:var(--muted);font-size:18px;margin:0 0 24px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:12px 16px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,.12)}
-    .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#001018;border:0}
-    .btn-ghost{color:var(--text)}
-    .headshot{justify-self:center;width:220px;height:220px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.15);box-shadow:0 10px 30px rgba(0,0,0,.35)}
-
-    /* Sections */
-    section{padding:72px 0;border-top:1px solid rgba(255,255,255,.06)}
-    h2{font-size:28px;margin:0 0 24px}
-    .grid{display:grid;gap:20px}
-
-    /* About */
-    .about-grid{grid-template-columns:1.1fr .9fr}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:20px}
-    .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    .fact{background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.18);color:#c6f3ff;border-radius:12px;padding:10px 12px;font-size:14px}
-
-    /* Resume */
-    .resume{grid-template-columns:1.2fr .8fr}
-    .resume h3{margin:8px 0 10px;font-size:18px}
-    .item{padding:10px 0}
-    .item h4{margin:6px 0;font-size:16px}
-    .meta{color:var(--muted);font-size:14px}
-    .list-plain{margin:6px 0 0 18px;line-height:1.65}
-
-    /* Publications */
-    .pub{padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
-    .pub + .pub{margin-top:12px}
-    .pub small{color:var(--muted)}
-    
-
-    /* Contact */
-    .contact-cards{grid-template-columns:repeat(auto-fit, minmax(220px,1fr));gap:12px}
-    .contact-card{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);text-decoration:none;color:var(--text);min-height:52px;font-weight:600}
-    .contact-card i{width:18px;text-align:center;opacity:.9}
-    .contact-card:hover{border-color:rgba(255,255,255,.22)}
-
-    /* Footer */
-    footer{padding:40px 0;color:var(--muted)}
-
-    /* Mobile */
-    @media (max-width: 900px){
-      .hero-wrap{grid-template-columns:1fr}
-      .about-grid,.resume,.contact-cards{grid-template-columns:1fr}
-      .nav-links{display:none}
-      .menu-btn{display:inline-flex}
-    }
-
-    /* Focus and motion */
-    :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-    @media (prefers-reduced-motion: no-preference){
-      .reveal{opacity:0;transform:translateY(6px);transition:opacity .6s ease,transform .6s ease}
-      .reveal.in{opacity:1;transform:none}
-    }
-
-    /* AI chat widget */
-    
-    
-    
-    
-    
-    .msg.me{justify-content:flex-end}
-    
-    .bubble.me{background:#12314a}
-    
-    
-    
-  </style>
-
-  <!-- Structured data for SEO -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Soheil Sepahyar",
-  "honorificSuffix": "Ph.D.",
-  "jobTitle": "Lecturer in Computer Science",
-  "affiliation": {"@type": "CollegeOrUniversity","name": "University of Massachusetts Boston"},
-  "email": "mailto:soheil.sepahyar@umb.edu",
-  "url": "https://soheilappear.github.io/soheilsepahyar/",
-  "sameAs": [
-    "https://www.linkedin.com/in/soheil-sepahyar/",
-    "https://github.com/soheilAppear",
-    "https://scholar.google.com/citations?user=JXdvsmMAAAAJ&hl=en&oi=ao"
-  ],
-  "knowsAbout": [
-    "Virtual Reality", "Augmented Reality", "Foveated Rendering", "Eye Tracking",
-    "Human-Computer Interaction", "Robotics", "Imitation Learning", "NVIDIA Isaac Sim"
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Soheil Sepahyar",
+    "honorificSuffix": "Ph.D.",
+    "jobTitle": "Lecturer in Computer Science",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Massachusetts Boston"},
+    "url": "https://soheilappear.github.io/soheilsepahyar/",
+    "sameAs": [
+      "https://www.linkedin.com/in/soheil-sepahyar/",
+      "https://github.com/soheilAppear",
+      "https://scholar.google.com/citations?user=JXdvsmMAAAAJ&hl=en&oi=ao"
+    ],
+    "knowsAbout": [
+      "Virtual Reality",
+      "Augmented Reality",
+      "Computer Graphics",
+      "Eye Tracking",
+      "Foveated Rendering",
+      "Human-Computer Interaction",
+      "Distance Perception",
+      "Robotics Simulation",
+      "NVIDIA Isaac Sim"
+    ]
+  }
+  </script>
 </head>
+
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Nav -->
-  <nav class="navbar" role="navigation" aria-label="Main">
-    <div class="container nav-inner">
-      <a class="brand" href="#hero" aria-label="Home">
-        <img src="Soheil_Sepahyar.jpg" alt="Soheil Sepahyar headshot" onerror="this.style.display='none'">
-        <span>Soheil Sepahyar</span>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="home" href="#top" aria-label="Home">
+        <img class="home-avatar" src="Soheil_Sepahyar.jpg" alt="Soheil Sepahyar" loading="lazy" />
+        <span class="home-name">Soheil Sepahyar</span>
       </a>
-      <div class="nav-links" aria-label="Section links">
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#research">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="menu-btn" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open');">Menu</button>
-    </div>
-  </nav>
 
-  <!-- Hero -->
-  <header id="hero" class="container hero">
-    <div class="hero-blob" aria-hidden="true"></div>
-    <div class="hero-wrap">
-      <div>
-        <h1 class="reveal">Soheil Sepahyar, Ph.D.</h1>
-        <p class="reveal" style="transition-delay:.08s">VR AR and AI researcher and lecturer at UMass Boston. Distance perception, foveated rendering, HCI, and robot learning with Isaac Sim.</p>
-        <div class="cta reveal" style="transition-delay:.16s">
-          <a class="btn btn-primary" href="#resume"><i class="fa-solid fa-file"></i> View Resume</a>
-          <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-download"></i> Download CV</a>
-        </div>
-      </div>
-      <img class="headshot reveal" style="transition-delay:.24s" src="Soheil_Sepahyar.jpg" alt="Portrait of Soheil" loading="lazy" onerror="this.src='https://via.placeholder.com/440x440.png?text=Soheil+Sepahyar'">
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Current work</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="resume.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- About -->
-    <section id="about">
-      <div class="container grid about-grid">
-        <div class="card reveal">
-  <h2>About</h2>
-  <p>I am a computer scientist working at the intersection of VR, AR, AI, graphics, and HCI. I build gaze-aware systems and study distance perception in immersive scenes. I also design human-in-the-loop data collection and evaluation for robot learning.</p>
-  <p>Stack highlights include C++, Python, C#, Unity, OpenGL, GLSL, and Maya. Current work focuses on eye-tracked foveated rendering and VR-to-Isaac Sim data pipelines.</p>
-</div>
-<div class="grid facts reveal" style="align-content:start">
-  <div class="fact"><i class="fa-solid fa-building-columns"></i> Lecturer, UMass Boston</div>
-  <div class="fact"><i class="fa-solid fa-vr-cardboard"></i> VR and AR</div>
-  <div class="fact"><i class="fa-solid fa-brain"></i> AI for XR and Robotics</div>
-  <div class="fact"><i class="fa-solid fa-people-arrows"></i> HCI</div>
-  <div class="fact"><i class="fa-solid fa-magnifying-glass-chart"></i> Distance perception</div>
-  <div class="fact"><i class="fa-solid fa-code"></i> C++ Python C#</div>
-</div>
-          <div class="fact"><i class="fa-solid fa-vr-cardboard"></i> VR and AR</div>
-          <div class="fact"><i class="fa-solid fa-magnifying-glass-chart"></i> Distance perception</div>
-          <div class="fact"><i class="fa-solid fa-code"></i> C++ Python C#</div>
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">VR • Graphics • HCI • Simulation</p>
+          <h1>Soheil Sepahyar, Ph.D.</h1>
+          <p class="subtitle">
+            Lecturer in Computer Science at UMass Boston. I build real-time VR systems and run perception-driven experiments,
+            with a focus on gaze-aware rendering, distance perception, and simulation pipelines for robotics.
+          </p>
+
+          <div class="hero-meta">
+            <span class="pill">Unity + C# + shaders</span>
+            <span class="pill">OpenGL / GLSL</span>
+            <span class="pill">Eye tracking (Quest Pro)</span>
+            <span class="pill">Python data pipelines</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Open CV</a>
+            <a class="btn" href="#contact">Contact</a>
+            <a class="btn ghost" href="https://github.com/soheilAppear" target="_blank" rel="noopener">GitHub</a>
+          </div>
+
+          <p class="fineprint">U.S. Permanent Resident (Green Card)</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Profile card">
+          <img class="hero-photo" src="Soheil_Sepahyar.jpg" alt="Portrait of Soheil Sepahyar" loading="lazy" />
+          <div class="hero-card-body">
+            <div class="hero-card-title">At a glance</div>
+            <ul class="kv">
+              <li><span>Role</span><span>Lecturer, UMass Boston</span></li>
+              <li><span>Focus</span><span>VR/AR, graphics, eye tracking</span></li>
+              <li><span>Research</span><span>Distance perception, foveated rendering</span></li>
+              <li><span>Tools</span><span>Unity, OpenGL, Python</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>About</h2>
+          <p class="muted">
+            I work at the intersection of perceptual science and real-time rendering, building prototypes that can be evaluated rigorously.
+          </p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Overview</h3>
+            <p>
+              My research background is in distance perception in virtual reality, including controlled user studies (for example, blind walking paradigms),
+              and the tooling required to run experiments reliably at interactive frame rates.
+            </p>
+            <p>
+              Recently, I have been extending this foundation toward gaze-aware rendering (eye-tracked foveated rendering and blur control),
+              and toward simulation and data collection pipelines that support robotics learning in environments like Isaac Sim.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Core strengths</h3>
+            <ul class="bullets">
+              <li>Real-time VR prototyping in Unity with robust experiment logic</li>
+              <li>Graphics systems and shader work (OpenGL / GLSL, Unity shaders)</li>
+              <li>End-to-end experiment pipelines (instrumentation, logging, analysis)</li>
+              <li>Applied ML and analytics experience from industry internships</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Resume -->
-    <section id="resume">
-      <div class="container grid resume">
-        <!-- Experience -->
-        <div class="card reveal">
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head">
+          <h2>Current work</h2>
+          <p class="muted">Two representative directions that connect research to production-style systems.</p>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <h3>Gaze-aware rendering for distance perception</h3>
+            <p class="muted">
+              Eye-tracked foveated rendering and gaze-contingent blur control in Unity, targeting perceptual evaluation in VR distance judgment tasks.
+            </p>
+            <ul class="bullets">
+              <li>Meta Quest Pro eye tracking integration</li>
+              <li>Stable smoothing and parameterization for experimental conditions</li>
+              <li>Data logging and analysis-ready outputs</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>VR to Isaac Sim data pipelines for robot learning</h3>
+            <p class="muted">
+              Human-in-the-loop teleoperation and demonstration collection to evaluate whether VR data improves learning on manipulation tasks.
+            </p>
+            <ul class="bullets">
+              <li>Interaction design for reliable demonstrations</li>
+              <li>Structured datasets for training and evaluation</li>
+              <li>Simulation and validation mindset (repeatable runs)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head">
           <h2>Experience</h2>
-          <div class="item">
-            <h4>Lecturer in Computer Science</h4>
-            <div class="meta">University of Massachusetts Boston | Jan 2024 to Present</div>
-            <ul class="list-plain">
-              <li>Courses include CS420, CS110, CS410, CS450, CS220, CS210, CS240</li>
-              <li>Developed materials and guided projects across theory and systems</li>
+          <p class="muted">A concise snapshot. Details are in the PDF CV.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="t-item card">
+            <div class="t-top">
+              <h3>Lecturer in Computer Science</h3>
+              <div class="t-meta">University of Massachusetts Boston | 2024 to present</div>
+            </div>
+            <ul class="bullets">
+              <li>Teach large-enrollment and upper-level courses across core CS topics</li>
+              <li>Design projects, exams, and scalable grading workflows</li>
+              <li>Mentor student work spanning theory, systems, and VR prototypes</li>
             </ul>
+          </article>
+
+          <article class="t-item card">
+            <div class="t-top">
+              <h3>Ph.D. Researcher</h3>
+              <div class="t-meta">Michigan Technological University | 2019 to 2023</div>
+            </div>
+            <ul class="bullets">
+              <li>Dissertation: distance perception in virtual reality</li>
+              <li>Built VR experimental software and data pipelines for controlled user studies</li>
+              <li>Publications at ACM SAP and related venues</li>
+            </ul>
+          </article>
+
+          <article class="t-item card">
+            <div class="t-top">
+              <h3>Visteon Corporation internships</h3>
+              <div class="t-meta">Michigan | Summers 2020 to 2022</div>
+            </div>
+            <ul class="bullets">
+              <li>Applied ML and analytics tooling, validation pipelines, and system integration</li>
+              <li>Produced reproducible workflows for data processing and evaluation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section-head">
+          <h2>Publications</h2>
+          <p class="muted">Selected work. Full list on Google Scholar.</p>
+        </div>
+
+        <div class="pubs">
+          <div class="pub card">
+            <div class="pub-title">VR Distance Judgements (ACM SAP 2022)</div>
+            <div class="pub-links">
+              <a href="https://dl.acm.org/doi/abs/10.1145/3548814.3551463" target="_blank" rel="noopener">ACM DL</a>
+            </div>
           </div>
-          <div class="item">
-            <h4>PhD VR Researcher</h4>
-            <div class="meta">Michigan Technological University | Jan 2019 to Dec 2023</div>
-            <ul class="list-plain">
-              <li>Unity and C# for VR experiments and tools</li>
-              <li>Python for data analysis and experiment pipelines</li>
-              <li>OpenGL and GLSL for C and C++ graphics</li>
-              <li>User studies on distance perception in VR</li>
-            </ul>
+
+          <div class="pub card">
+            <div class="pub-title">Brightness vs. Distance Judgements (ACM SAP 2020)</div>
+            <div class="pub-links">
+              <a href="https://dl.acm.org/doi/abs/10.1145/3385955.3407929" target="_blank" rel="noopener">ACM DL</a>
+            </div>
           </div>
-          <div class="item">
-            <h4>Visteon Internships</h4>
-            <div class="meta">Summers 2020, 2021, 2022</div>
-            <ul class="list-plain">
-              <li>Product design lead intern for testing pipelines and data analysis</li>
-              <li>AI and ML for driver monitoring and dynamics</li>
-              <li>ADAS software with CNN depth perception</li>
-            </ul>
+
+          <div class="pub card">
+            <div class="pub-title">Sorting Algorithm Comparison (ACM ACAI 2019)</div>
+            <div class="pub-links">
+              <a href="https://dl.acm.org/doi/abs/10.1145/3377713.3377808" target="_blank" rel="noopener">ACM DL</a>
+            </div>
           </div>
         </div>
 
-        <!-- Education and Skills -->
-        <div class="grid" style="gap:20px">
-          <div class="card reveal">
-            <h2>Education</h2>
-            <div class="item">
-              <h4>PhD in Computer Science</h4>
-              <div class="meta">Michigan Technological University | GPA 3.71</div>
-              <div>Thesis: <a href="https://digitalcommons.mtu.edu/etdr/1664/" target="_blank" rel="noopener">VR Distance Perception in Virtual Reality</a></div>
-            </div>
-            <div class="item">
-              <h4>MS in Computer Science</h4>
-              <div class="meta">Michigan Technological University | GPA 3.70</div>
-            </div>
-            <div class="item">
-              <h4>BS in Computer Software Engineering</h4>
-              <div class="meta">Azad University, Central Tehran | GPA 3.74</div>
-            </div>
-          </div>
-          <div class="card reveal">
-            <h2>Skills</h2>
-            <ul class="list-plain">
-              <li><strong>Languages</strong> C++, Python, C#</li>
-              <li><strong>Tech</strong> OpenGL, GLSL, Unity, Maya</li>
-              <li><strong>Platforms</strong> Linux, Windows, macOS</li>
+        <div class="section-note">
+          <a class="btn ghost" href="https://scholar.google.com/citations?user=JXdvsmMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="teaching">
+      <div class="container">
+        <div class="section-head">
+          <h2>Teaching</h2>
+          <p class="muted">I enjoy building practical course infrastructure and helping students learn by doing.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Courses</h3>
+            <ul class="bullets">
+              <li>CS420: Theory of Computation (Rocq / Coq for formal reasoning)</li>
+              <li>CS450: Structure of Higher Level Programming Languages (Racket and functional programming)</li>
+              <li>CS240: Programming in C</li>
+              <li>CS210: Data Structures</li>
+              <li>CS110: Introduction to Computing</li>
+              <li>CS220: Discrete Mathematics</li>
             </ul>
-            <div style="margin-top:12px"><a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> PDF resume</a></div>
+          </div>
+
+          <div class="card">
+            <h3>Teaching style</h3>
+            <ul class="bullets">
+              <li>Clear problem decomposition and readable, testable code</li>
+              <li>Scalable feedback using autograding and consistent rubrics</li>
+              <li>Emphasis on fundamentals that translate to industry projects</li>
+            </ul>
+            <div class="section-note">
+              <a class="btn" href="resume.pdf" target="_blank" rel="noopener">See CV for details</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Publications -->
-    <section id="research">
+    <section class="section" id="contact">
       <div class="container">
-        <h2 class="reveal">Current Projects</h2>
-        <div class="grid">
-
-          <article class="card reveal">
-  <h3>Foveated Rendering and Distance Perception in VR</h3>
-  <div class="meta">Current</div>
-  <p>I study how gaze-contingent foveated rendering changes egocentric distance judgments in VR using Meta Quest Pro eye tracking in Unity.</p>
-</article>
-
-          <article class="card reveal">
-  <h3>VR Data for Isaac Sim Robot Training</h3>
-  <div class="meta">Current</div>
-  <p>I build a VR teleoperation pipeline to collect demonstrations in NVIDIA Isaac Sim and test if VR data improves robot learning on pick and place tasks.</p>
-</article>
-
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p class="muted">Best ways to reach me.</p>
         </div>
-      </div>
-    </section>
 
-    <section id="publications">
-      <div class="container">
-        <h2 class="reveal">Publications</h2>
-        <article class="pub reveal">
-          <div><strong>VR Distance Judgments</strong> SAP 2022</div>
-          <small><a href="https://dl.acm.org/doi/abs/10.1145/3548814.3551463" target="_blank" rel="noopener">ACM DL</a></small>
-          </article>
-        <article class="pub reveal">
-          <div><strong>Brightness on Distance Judgments</strong> SAP 2020</div>
-          <small><a href="https://dl.acm.org/doi/abs/10.1145/3385955.3407929" target="_blank" rel="noopener">ACM DL</a></small>
-          </article>
-        <article class="pub reveal">
-          <div><strong>Sorting Algorithms Comparison</strong> ACAI 2019</div>
-          <small><a href="https://dl.acm.org/doi/abs/10.1145/3377713.3377808" target="_blank" rel="noopener">ACM DL</a></small>
-          </article>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="reveal">Contact</h2>
-        <div class="grid contact-cards reveal">
-          <a class="contact-card" href="mailto:soheil.sepahyar@umb.edu" target="_blank" rel="noopener"><i class="fa-solid fa-envelope"></i> Email</a>
-          <!-- <a class="contact-card" href="tel:+19063700091"><i class="fa-solid fa-phone"></i> (906) 370-0091</a> -->
-          <a class="contact-card" href="https://www.linkedin.com/in/soheil-sepahyar/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a class="contact-card" href="https://scholar.google.com/citations?user=JXdvsmMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
-          <a class="contact-card" href="https://github.com/soheilAppear" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        <div class="contact">
+          <a class="contact-card" href="mailto:soheil.sepahyar@umb.edu">
+            <span class="contact-k">Email</span><span class="contact-v">soheil.sepahyar@umb.edu</span>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/soheil-sepahyar/" target="_blank" rel="noopener">
+            <span class="contact-k">LinkedIn</span><span class="contact-v">/in/soheil-sepahyar</span>
+          </a>
+          <a class="contact-card" href="https://github.com/soheilAppear" target="_blank" rel="noopener">
+            <span class="contact-k">GitHub</span><span class="contact-v">github.com/soheilAppear</span>
+          </a>
+          <a class="contact-card" href="https://scholar.google.com/citations?user=JXdvsmMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">
+            <span class="contact-k">Scholar</span><span class="contact-v">Google Scholar</span>
+          </a>
         </div>
+
+        <footer class="site-footer">
+          <div class="muted">© <span id="year"></span> Soheil Sepahyar</div>
+        </footer>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">© <span id="y"></span> Soheil Sepahyar. All rights reserved.</div>
-  </footer>
-
-  
-
   <script>
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-    },{threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.getElementById('nav');
 
-    // Footer year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
 
-    // Publications helpers
-    // Mobile menu
-    const menuBtn = document.querySelector('.menu-btn');
-    if(menuBtn){
-      menuBtn.addEventListener('click',()=>{
-        document.querySelector('.nav-links').classList.toggle('open');
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
       });
-    }
-</script>
+    });
 
-  
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
