@@ -67,6 +67,8 @@
         <a href="#work">Current work</a>
         <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
+        <a href="#service">Service</a>
+        <a href="#honors">Honors</a>
         <a href="#teaching">Teaching</a>
         <a href="#contact">Contact</a>
         <a class="nav-cta" href="resume.pdf" target="_blank" rel="noopener">CV (PDF)</a>
@@ -190,7 +192,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Experience</h2>
-          <p class="muted">A concise snapshot. Details are in the PDF CV.</p>
+          <p class="muted">Selected impact highlights. Full detail is in the PDF CV.</p>
         </div>
 
         <div class="timeline">
@@ -208,25 +210,76 @@
 
           <article class="t-item card">
             <div class="t-top">
-              <h3>Ph.D. Researcher</h3>
+              <h3>Ph.D. Researcher (Virtual Reality and Perception)</h3>
               <div class="t-meta">Michigan Technological University | 2019 to 2023</div>
             </div>
+
             <ul class="bullets">
-              <li>Dissertation: distance perception in virtual reality</li>
-              <li>Built VR experimental software and data pipelines for controlled user studies</li>
-              <li>Publications at ACM SAP and related venues</li>
+              <li>Thesis: The impact of pre-experiment walking on distance perception in VR</li>
+              <li>Designed controlled VR studies and built experiment software and analysis pipelines</li>
+              <li>Collected and analyzed high-frequency HMD tracking data (about 70 Hz) across 130+ participants</li>
+              <li>Quantified pre-experiment blind walking effects, improving distance judgment accuracy from about 80% to 97%+</li>
             </ul>
+
+            <details class="details">
+              <summary class="details-summary">Methods and algorithms (selected)</summary>
+              <div class="details-body">
+                <ul class="bullets">
+                  <li><strong>Cumulative distance integration</strong>: computed true walked distance by integrating path deviations</li>
+                  <li><strong>Turning point detection</strong>: identified meaningful turns using angular velocity signals</li>
+                  <li><strong>Step detection</strong>: filtering plus <code>scipy.signal.find_peaks</code> on vertical HMD motion</li>
+                  <li><strong>Reusable tooling</strong>: Python modules for data processing and visualization</li>
+                </ul>
+                <p class="muted" style="margin:0;">
+                  Tools: Python (NumPy, SciPy, Pandas, Matplotlib), statistics (ANOVA), Unity, C++.
+                </p>
+              </div>
+            </details>
           </article>
 
           <article class="t-item card">
             <div class="t-top">
-              <h3>Visteon Corporation internships</h3>
-              <div class="t-meta">Michigan | Summers 2020 to 2022</div>
+              <h3>Visteon Corporation (3 Co-op Terms)</h3>
+              <div class="t-meta">Michigan | 2020 to 2022</div>
             </div>
+
             <ul class="bullets">
-              <li>Applied ML and analytics tooling, validation pipelines, and system integration</li>
-              <li>Produced reproducible workflows for data processing and evaluation</li>
+              <li>Applied ML, data engineering, and system integration to automotive workflows</li>
+              <li>Progressed from foundational AI research to technical lead responsibilities</li>
+              <li>Delivered production-minded tools that reduced multi-day analysis cycles to minutes</li>
             </ul>
+
+            <details class="details">
+              <summary class="details-summary">Co-op III (Summer 2022): Product Design Technical Lead Intern</summary>
+              <div class="details-body">
+                <ul class="bullets">
+                  <li>Built <strong>V-PEDAT</strong>, a Python desktop application (Tkinter, Pandas, Matplotlib) to automate analysis</li>
+                  <li>Automated processing of 26,500+ data points and graphs previously handled manually</li>
+                  <li><strong>Impact</strong>: reduced analysis time from multiple days to under 5 minutes</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="details">
+              <summary class="details-summary">Co-op II (Summer 2021): AI and System Integration Engineering</summary>
+              <div class="details-body">
+                <ul class="bullets">
+                  <li>Optimized a DMS-related algorithm using <code>sin(2x) = 2sin(x)cos(x)</code> for efficient arm-angle detection</li>
+                  <li>Worked with Leica 3D Disto lidar hardware and conducted testing on Mahindra test benches</li>
+                  <li>Skills: Python, C, Bash, Docker, embedded testing, computer vision</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="details">
+              <summary class="details-summary">Co-op I (Summer 2020): Foundational AI Research</summary>
+              <div class="details-body">
+                <ul class="bullets">
+                  <li>Built monocular depth estimation data pipelines, converting 60,000+ images from <code>.npz</code> into CNN-ready datasets</li>
+                  <li>Trained PackNet models using Keras and TensorFlow, managed reproducible runs with Docker</li>
+                </ul>
+              </div>
+            </details>
           </article>
         </div>
       </div>
@@ -264,6 +317,79 @@
 
         <div class="section-note">
           <a class="btn ghost" href="https://scholar.google.com/citations?user=JXdvsmMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="service">
+      <div class="container">
+        <div class="section-head">
+          <h2>Service</h2>
+          <p class="muted">Conference reviewing and community contributions.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Program committees</h3>
+            <ul class="bullets">
+              <li><strong>ACM Symposium on Applied Perception (SAP)</strong> Program Committee (2025, 2026)</li>
+            </ul>
+            <p class="muted">
+              Reviewed submissions, led discussion, wrote meta-reviews, and shepherded conditionally accepted papers to final acceptance.
+              <a class="inline-link" href="https://sap.acm.org/2025/" target="_blank" rel="noopener">SAP 2025</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Reviewer roles</h3>
+            <ul class="bullets">
+              <li>IEEE VR 2023, IEEE VR 2024</li>
+              <li>ACM VRST 2023, ACM VRST 2024</li>
+              <li>PeerJ (paper reviewer)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Volunteering</h3>
+            <ul class="bullets">
+              <li>ACM SIGGRAPH 2024, Student Volunteer</li>
+              <li>AWE USA 2025, Volunteer</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>How I approach service</h3>
+            <ul class="bullets">
+              <li>Timely feedback with clear strengths, risks, and actionable suggestions</li>
+              <li>Attention to experimental design, evaluation validity, and reproducibility</li>
+              <li>Balanced judgment that is rigorous and fair</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="honors">
+      <div class="container">
+        <div class="section-head">
+          <h2>Honors</h2>
+          <p class="muted">Selected recognition and support.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Finishing Fellowship (Ph.D.)</h3>
+            <p class="muted">
+              Awarded a finishing fellowship in 2023 to support completion of the Ph.D. program and dissertation work.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Professional engagement</h3>
+            <p class="muted">
+              Ongoing service to the VR community through peer review and program committee work in perception and VR venues.
+            </p>
+          </div>
         </div>
       </div>
     </section>

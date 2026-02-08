@@ -17,3 +17,14 @@ Personal website for Soheil Sepahyar (GitHub Pages).
 - Update text in `index.html` under sections: About, Current work, Experience, Publications, Teaching
 - Replace `resume.pdf` anytime with your latest CV (keep the filename)
 - Replace `Soheil_Sepahyar.jpg` anytime (keep the filename)
+
+
+## Sections
+- About
+- Current work
+- Experience
+- Publications
+- Service
+- Honors
+- Teaching
+- Contact

@@ -445,3 +445,31 @@ body{
   .nav.open{ display: flex; }
   .nav a{ padding: 10px 12px; }
 }
+
+
+/* Details (clean, compact) */
+.details{
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--panel), transparent 2%);
+  padding: 10px 12px;
+}
+.details-summary{
+  cursor: pointer;
+  font-weight: 650;
+  color: color-mix(in srgb, var(--text), transparent 8%);
+}
+.details-summary::-webkit-details-marker{ display:none; }
+.details[open] .details-summary{ margin-bottom: 8px; }
+.details-body{ padding-top: 2px; }
+
+
+/* Inline links inside paragraphs */
+.inline-link{
+  color: var(--accent);
+  font-weight: 650;
+}
+.inline-link:hover{
+  text-decoration: underline;
+}
