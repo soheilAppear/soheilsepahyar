@@ -55,11 +55,12 @@
     </div>
   </header>
 
-  <main id="top" class="wrap layout" data-gaze-stage>
-    <div class="gaze-cursor" data-gaze-cursor aria-hidden="true">
-      <span class="gaze-cursor-reticle"></span>
-      <span class="gaze-cursor-dot"></span>
-    </div>
+  <div class="gaze-cursor" data-gaze-cursor aria-hidden="true">
+    <span class="gaze-cursor-halo"></span>
+    <span class="gaze-cursor-dot"></span>
+  </div>
+
+  <main id="top" class="wrap layout">
 
     <aside class="sidebar" aria-label="Profile">
       <img class="avatar" src="Soheil_Sepahyar.jpg" alt="Portrait of Soheil Sepahyar" loading="lazy" />
@@ -493,9 +494,8 @@
     }());
 
     (function () {
-      const stage = document.querySelector('[data-gaze-stage]');
       const cursor = document.querySelector('[data-gaze-cursor]');
-      if (!stage || !cursor) return;
+      if (!cursor) return;
 
       const supportsPointerFocus = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -563,9 +563,9 @@
         cursor.classList.remove('is-visible', 'is-interactive');
       };
 
-      stage.addEventListener('pointerenter', updateCursorTarget);
-      stage.addEventListener('pointermove', updateCursorTarget, { passive: true });
-      stage.addEventListener('pointerleave', hideCursor);
+      document.addEventListener('pointerenter', updateCursorTarget);
+      document.addEventListener('pointermove', updateCursorTarget, { passive: true });
+      document.addEventListener('pointerleave', hideCursor);
       window.addEventListener('blur', hideCursor);
     }());
   </script>
