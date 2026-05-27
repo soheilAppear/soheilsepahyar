@@ -60,7 +60,7 @@
       <img class="avatar" src="Soheil_Sepahyar.jpg" alt="Portrait of Soheil Sepahyar" loading="lazy" />
 
       <div class="identity">
-        <h1>Soheil Sepahyar, Ph.D.</h1>
+        <div class="profile-name">Soheil Sepahyar, Ph.D.</div>
         <p class="tagline">
           Lecturer, UMass Boston. VR/AR, graphics, eye tracking, perception, simulation.
         </p>
@@ -92,7 +92,29 @@
     </aside>
 
     <section id="content" class="content" aria-label="Main content">
-      <section class="section" id="about">
+      <section class="hero gaze-hero" id="about" aria-labelledby="hero-title">
+        <div class="hero-visual" data-gaze-visual>
+          <div class="hero-media" aria-hidden="true">
+            <video class="hero-video hero-video-sharp" autoplay muted loop playsinline preload="metadata">
+              <source src="ProjectDemos/FocusWeave/part_001.mp4" type="video/mp4">
+            </video>
+            <video class="hero-video hero-video-blurred" autoplay muted loop playsinline preload="metadata">
+              <source src="ProjectDemos/FocusWeave/part_001.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="hero-shade" aria-hidden="true"></div>
+          <div class="hero-copy">
+            <p class="hero-kicker">VR / HCI / AI perception systems</p>
+            <h1 id="hero-title">Building intelligent immersive systems for human perception.</h1>
+            <p class="hero-subtitle">
+              I design and build VR, HCI, and AI systems that explore how humans perceive, interact with, and adapt to virtual environments.
+            </p>
+            <p class="hero-instruction" data-gaze-instruction>Move your cursor to simulate gaze-aware rendering.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="overview">
         <h2>About</h2>
         <p>
           I work at the intersection of perceptual science and real-time rendering. My background is in VR distance perception,
@@ -408,6 +430,62 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      const visual = document.querySelector('[data-gaze-visual]');
+      if (!visual) return;
+
+      const supportsPointerFocus = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!supportsPointerFocus || prefersReducedMotion) return;
+
+      let currentX = 50;
+      let currentY = 50;
+      let targetX = 50;
+      let targetY = 50;
+      let frameId = 0;
+
+      const setFocusPosition = function (x, y) {
+        visual.style.setProperty('--x', x.toFixed(2) + '%');
+        visual.style.setProperty('--y', y.toFixed(2) + '%');
+      };
+
+      const animateFocus = function () {
+        currentX += (targetX - currentX) * 0.16;
+        currentY += (targetY - currentY) * 0.16;
+        setFocusPosition(currentX, currentY);
+
+        if (Math.abs(targetX - currentX) > 0.04 || Math.abs(targetY - currentY) > 0.04) {
+          frameId = window.requestAnimationFrame(animateFocus);
+        } else {
+          currentX = targetX;
+          currentY = targetY;
+          setFocusPosition(currentX, currentY);
+          frameId = 0;
+        }
+      };
+
+      const requestFocusFrame = function () {
+        if (!frameId) {
+          frameId = window.requestAnimationFrame(animateFocus);
+        }
+      };
+
+      const updateTarget = function (event) {
+        const rect = visual.getBoundingClientRect();
+        targetX = Math.min(100, Math.max(0, ((event.clientX - rect.left) / rect.width) * 100));
+        targetY = Math.min(100, Math.max(0, ((event.clientY - rect.top) / rect.height) * 100));
+        requestFocusFrame();
+      };
+
+      visual.addEventListener('pointerenter', updateTarget);
+      visual.addEventListener('pointermove', updateTarget);
+      visual.addEventListener('pointerleave', function () {
+        targetX = 50;
+        targetY = 50;
+        requestFocusFrame();
+      });
+    }());
   </script>
 </body>
 </html>
