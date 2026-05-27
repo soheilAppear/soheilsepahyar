@@ -55,7 +55,12 @@
     </div>
   </header>
 
-  <main id="top" class="wrap layout">
+  <main id="top" class="wrap layout" data-gaze-stage>
+    <div class="gaze-cursor" data-gaze-cursor aria-hidden="true">
+      <span class="gaze-cursor-reticle"></span>
+      <span class="gaze-cursor-dot"></span>
+    </div>
+
     <aside class="sidebar" aria-label="Profile">
       <img class="avatar" src="Soheil_Sepahyar.jpg" alt="Portrait of Soheil Sepahyar" loading="lazy" />
 
@@ -485,6 +490,83 @@
         targetY = 50;
         requestFocusFrame();
       });
+    }());
+
+    (function () {
+      const stage = document.querySelector('[data-gaze-stage]');
+      const cursor = document.querySelector('[data-gaze-cursor]');
+      if (!stage || !cursor) return;
+
+      const supportsPointerFocus = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!supportsPointerFocus || prefersReducedMotion) return;
+
+      let currentX = window.innerWidth * 0.5;
+      let currentY = window.innerHeight * 0.5;
+      let targetX = currentX;
+      let targetY = currentY;
+      let frameId = 0;
+      let hasPointerPosition = false;
+
+      document.body.classList.add('gaze-tracker-enabled');
+
+      const setCursorPosition = function (x, y) {
+        cursor.style.setProperty('--cursor-x', x.toFixed(1) + 'px');
+        cursor.style.setProperty('--cursor-y', y.toFixed(1) + 'px');
+      };
+
+      const animateCursor = function () {
+        currentX += (targetX - currentX) * 0.22;
+        currentY += (targetY - currentY) * 0.22;
+        setCursorPosition(currentX, currentY);
+
+        if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
+          frameId = window.requestAnimationFrame(animateCursor);
+        } else {
+          currentX = targetX;
+          currentY = targetY;
+          setCursorPosition(currentX, currentY);
+          frameId = 0;
+        }
+      };
+
+      const requestCursorFrame = function () {
+        if (!frameId) {
+          frameId = window.requestAnimationFrame(animateCursor);
+        }
+      };
+
+      const updateCursorTarget = function (event) {
+        targetX = event.clientX;
+        targetY = event.clientY;
+
+        if (!hasPointerPosition) {
+          currentX = targetX;
+          currentY = targetY;
+          setCursorPosition(currentX, currentY);
+          hasPointerPosition = true;
+        }
+
+        const eventTarget = event.target;
+        const isInteractive = Boolean(
+          eventTarget &&
+          eventTarget.closest &&
+          eventTarget.closest('a, button, summary, video, [role="button"]')
+        );
+
+        cursor.classList.add('is-visible');
+        cursor.classList.toggle('is-interactive', isInteractive);
+        requestCursorFrame();
+      };
+
+      const hideCursor = function () {
+        cursor.classList.remove('is-visible', 'is-interactive');
+      };
+
+      stage.addEventListener('pointerenter', updateCursorTarget);
+      stage.addEventListener('pointermove', updateCursorTarget, { passive: true });
+      stage.addEventListener('pointerleave', hideCursor);
+      window.addEventListener('blur', hideCursor);
     }());
   </script>
 </body>
