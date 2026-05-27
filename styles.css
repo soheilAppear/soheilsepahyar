@@ -1,16 +1,17 @@
-/* Minimal academic layout: clean typography, fast scan, low decoration */
+/* Research portfolio layout: dark lab palette, clean typography, subtle technical texture */
 
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{ margin:0; }
 
 :root{
-  --bg:#ffffff;
-  --text:#0b1220;
-  --muted:#4b5563;
-  --line:rgba(15,23,42,0.14);
-  --accent:#1d4ed8;
-  --panel:#ffffff;
+  color-scheme: dark;
+  --bg:#06101f;
+  --text:#eef7ff;
+  --muted:#9fb1c6;
+  --line:rgba(125,211,252,0.17);
+  --accent:#67e8f9;
+  --panel:#0b1728;
 
   --sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --serif: "Source Serif 4", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -20,12 +21,12 @@ body{ margin:0; }
 
 @media (prefers-color-scheme: dark){
   :root{
-    --bg:#0b1220;
-    --text:#eef2ff;
-    --muted:#a5b4c4;
-    --line:rgba(255,255,255,0.14);
-    --accent:#60a5fa;
-    --panel:#0f172a;
+    --bg:#06101f;
+    --text:#eef7ff;
+    --muted:#9fb1c6;
+    --line:rgba(125,211,252,0.17);
+    --accent:#67e8f9;
+    --panel:#0b1728;
   }
 }
 
@@ -33,10 +34,12 @@ body{
   font-family: var(--sans);
   color: var(--text);
   background:
-    radial-gradient(circle at 82% 8%, rgba(20, 184, 166, 0.08), transparent 28rem),
-    linear-gradient(180deg, rgba(29, 78, 216, 0.04), transparent 360px),
-    repeating-linear-gradient(90deg, rgba(29, 78, 216, 0.032) 0 1px, transparent 1px 54px),
-    repeating-linear-gradient(0deg, rgba(20, 184, 166, 0.026) 0 1px, transparent 1px 54px),
+    radial-gradient(circle at 78% -8%, rgba(103,232,249,0.16), transparent 30rem),
+    radial-gradient(circle at 8% 10%, rgba(45,212,191,0.11), transparent 32rem),
+    linear-gradient(180deg, rgba(2,6,23,0.42), transparent 420px),
+    repeating-linear-gradient(135deg, transparent 0 88px, rgba(103,232,249,0.035) 88px 89px, transparent 89px 176px),
+    repeating-linear-gradient(90deg, rgba(125,211,252,0.055) 0 1px, transparent 1px 54px),
+    repeating-linear-gradient(0deg, rgba(45,212,191,0.04) 0 1px, transparent 1px 54px),
     var(--bg);
   background-attachment: fixed;
   line-height: 1.65;
