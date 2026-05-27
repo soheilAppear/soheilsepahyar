@@ -109,12 +109,28 @@
             </video>
           </div>
           <div class="hero-shade" aria-hidden="true"></div>
+          <div class="hero-signal" aria-label="Simulated gaze rendering status">
+            <div class="hero-signal-row">
+              <span class="hero-signal-dot" aria-hidden="true"></span>
+              <span>Simulated gaze point</span>
+            </div>
+            <div class="hero-signal-meter" aria-hidden="true">
+              <span></span>
+            </div>
+            <div class="hero-signal-meta">Foveated focus preview</div>
+          </div>
           <div class="hero-copy">
             <p class="hero-kicker">VR / HCI / AI perception systems</p>
             <h1 id="hero-title">Building intelligent immersive systems for human perception.</h1>
             <p class="hero-subtitle">
               I design and build VR, HCI, and AI systems that explore how humans perceive, interact with, and adapt to virtual environments.
             </p>
+            <div class="hero-tags" aria-label="Research areas">
+              <span>VR perception</span>
+              <span>Eye tracking</span>
+              <span>Real-time rendering</span>
+              <span>Human-AI interaction</span>
+            </div>
             <p class="hero-instruction" data-gaze-instruction>Move your cursor to simulate gaze-aware rendering.</p>
           </div>
         </div>
@@ -157,8 +173,14 @@
       <section class="section" id="work">
         <h2>Current work</h2>
 
-        <div class="item">
-          <h3>FocusWeave</h3>
+        <div class="item featured-project">
+          <div class="project-heading">
+            <div>
+              <p class="project-label">Featured project</p>
+              <h3>FocusWeave</h3>
+            </div>
+            <span class="project-pill">Gaze-aware rendering</span>
+          </div>
           <p class="muted">
             Eye-tracked foveated rendering and gaze-contingent blur control in Unity, targeting perceptual evaluation in VR distance judgment tasks.
           </p>
@@ -168,6 +190,18 @@
             <li>Stable smoothing and parameterization for experimental conditions</li>
             <li>Data logging and analysis-ready outputs</li>
           </ul>
+
+          <div class="project-tags" aria-label="FocusWeave focus areas">
+            <span>Meta Quest Pro</span>
+            <span>Unity</span>
+            <span>Gaze-contingent blur</span>
+            <span>Experiment logging</span>
+          </div>
+
+          <div class="project-demo-head">
+            <span>Demo sequence</span>
+            <span>9 clips</span>
+          </div>
 
           <div class="project-demos" aria-label="FocusWeave demos">
             <figure class="project-demo">
