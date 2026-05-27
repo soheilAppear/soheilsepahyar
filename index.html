@@ -596,10 +596,9 @@
         }
       };
 
-      const updateCursorTarget = function (event) {
-        if (!hasFinePointer && event.pointerType !== 'touch') return;
-        targetX = event.clientX;
-        targetY = event.clientY;
+      const updateCursorPosition = function (clientX, clientY, eventTarget) {
+        targetX = clientX;
+        targetY = clientY;
 
         if (!hasPointerPosition) {
           currentX = targetX;
@@ -608,7 +607,6 @@
           hasPointerPosition = true;
         }
 
-        const eventTarget = event.target;
         const isInteractive = Boolean(
           eventTarget &&
           eventTarget.closest &&
@@ -620,15 +618,44 @@
         requestCursorFrame();
       };
 
-      const hideCursor = function () {
-        cursor.classList.remove('is-visible', 'is-interactive');
+      const updateCursorTarget = function (event) {
+        updateCursorPosition(event.clientX, event.clientY, event.target);
       };
 
-      document.addEventListener('pointerdown', updateCursorTarget, { passive: true });
-      document.addEventListener('pointermove', updateCursorTarget, { passive: true });
-      document.addEventListener('pointerup', hideCursor);
-      document.addEventListener('pointercancel', hideCursor);
-      document.addEventListener('pointerleave', hideCursor);
+      const updateTouchCursor = function (event) {
+        const touch = event.touches && event.touches[0];
+        if (!touch) return;
+
+        const targetAtTouch = document.elementFromPoint(touch.clientX, touch.clientY) || event.target;
+        updateCursorPosition(touch.clientX, touch.clientY, targetAtTouch);
+      };
+
+      const hideCursor = function () {
+        cursor.classList.remove('is-visible', 'is-interactive');
+        if (!hasFinePointer) {
+          hasPointerPosition = false;
+        }
+      };
+
+      if (hasFinePointer) {
+        document.addEventListener('pointerdown', updateCursorTarget, { passive: true });
+        document.addEventListener('pointermove', updateCursorTarget, { passive: true });
+        document.addEventListener('pointerup', hideCursor);
+        document.addEventListener('pointercancel', hideCursor);
+        document.addEventListener('pointerleave', hideCursor);
+      } else {
+        document.addEventListener('touchstart', updateTouchCursor, { passive: true });
+        document.addEventListener('touchmove', updateTouchCursor, { passive: true });
+        document.addEventListener('touchend', function (event) {
+          if (event.touches && event.touches.length > 0) {
+            updateTouchCursor(event);
+          } else {
+            hideCursor();
+          }
+        }, { passive: true });
+        document.addEventListener('touchcancel', hideCursor, { passive: true });
+      }
+
       window.addEventListener('blur', hideCursor);
     }());
   </script>
