@@ -302,6 +302,7 @@ body.gaze-tracker-enabled video{
   min-height: 460px;
   overflow: hidden;
   isolation: isolate;
+  touch-action: pan-y;
   color: #f8fafc;
   background:
     linear-gradient(135deg, #07111f, #122033 52%, #10251f),
@@ -790,9 +791,6 @@ details > summary{
 }
 
 @media (hover: none), (pointer: coarse){
-  .gaze-cursor{
-    display: none;
-  }
   .gaze-hero{
     --x: 50%;
     --y: 50%;
