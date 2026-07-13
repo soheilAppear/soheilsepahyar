@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Soheil Sepahyar, Ph.D. | VR, Graphics, HCI</title>
-  <meta name="description" content="Soheil Sepahyar, Ph.D. Lecturer at UMass Boston. VR/AR, graphics, eye tracking, distance perception, and simulation." />
+  <title>Soheil Sepahyar, Ph.D. | VR, Robotics, Embodied AI</title>
+  <meta name="description" content="Soheil Sepahyar, Ph.D. Lecturer at UMass Boston. VR/AR, eye tracking, robotics simulation, and embodied AI — from gaze-aware rendering to humanoid teleoperation in Isaac Sim." />
+  <meta name="theme-color" content="#f5f5f7" />
   <link rel="canonical" href="https://soheilappear.github.io/soheilsepahyar/" />
 
   <meta property="og:title" content="Soheil Sepahyar, Ph.D." />
-  <meta property="og:description" content="VR/AR, graphics, eye tracking, distance perception, and simulation." />
+  <meta property="og:description" content="VR/AR, eye tracking, robotics simulation, and embodied AI — from gaze-aware rendering to humanoid teleoperation in Isaac Sim." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://soheilappear.github.io/soheilsepahyar/" />
   <meta property="og:image" content="Soheil_Sepahyar.jpg" />
@@ -27,6 +28,7 @@
     "jobTitle": "Lecturer in Computer Science",
     "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Massachusetts Boston"},
     "url": "https://soheilappear.github.io/soheilsepahyar/",
+    "knowsAbout": ["Virtual Reality", "Eye Tracking", "Robotics Simulation", "Embodied AI", "Human-Computer Interaction", "Real-Time Rendering"],
     "sameAs": [
       "https://www.linkedin.com/in/soheil-sepahyar/",
       "https://github.com/soheilAppear",
@@ -45,7 +47,7 @@
       <nav class="topbar-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#impact">Impact</a>
-        <a href="#work">Work</a>
+        <a href="#work">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
         <a href="#service">Service</a>
@@ -69,7 +71,7 @@
       <div class="identity">
         <div class="profile-name">Soheil Sepahyar, Ph.D.</div>
         <p class="tagline">
-          Lecturer, UMass Boston. VR/AR, graphics, eye tracking, perception, simulation.
+          Lecturer, UMass Boston. VR/AR, eye tracking, robotics simulation, and embodied AI.
         </p>
       </div>
 
@@ -89,7 +91,7 @@
       <nav class="toc" aria-label="On this page">
         <a href="#about">About</a>
         <a href="#impact">Impact</a>
-        <a href="#work">Current work</a>
+        <a href="#work">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
         <a href="#service">Service</a>
@@ -112,16 +114,17 @@
           </div>
           <div class="hero-shade" aria-hidden="true"></div>
           <div class="hero-copy">
-            <p class="hero-kicker">VR / HCI / AI perception systems</p>
-            <h1 id="hero-title">Building intelligent immersive systems for human perception.</h1>
+            <p class="hero-kicker">VR &middot; Robotics &middot; Embodied AI</p>
+            <h1 id="hero-title">Building immersive systems for human perception and robot learning.</h1>
             <p class="hero-subtitle">
-              I design and build VR, HCI, and AI systems that explore how humans perceive, interact with, and adapt to virtual environments.
+              I design and build VR, eye-tracking, and robotics-simulation systems that explore how humans perceive virtual worlds &mdash; and how human behavior can teach embodied AI.
             </p>
             <div class="hero-tags" aria-label="Research areas">
               <span>VR perception</span>
               <span>Eye tracking</span>
+              <span>Humanoid teleoperation</span>
               <span>Real-time rendering</span>
-              <span>Human-AI interaction</span>
+              <span>Embodied AI</span>
             </div>
             <p class="hero-instruction" data-gaze-instruction>Move your cursor or touch the visual to simulate gaze-aware rendering.</p>
           </div>
@@ -134,7 +137,7 @@
           <h2 id="signature-title">Perception-aware immersive intelligence.</h2>
         </div>
         <p class="signature-lede">
-          My work connects perceptual science, real-time graphics, and AI-oriented data systems: building immersive interfaces that sense attention, adapt visual information, and turn human behavior into usable signals.
+          My work connects perceptual science, real-time graphics, and robot learning: building immersive interfaces that sense attention, adapt visual information, and turn human behavior into training signal for embodied AI.
         </p>
         <div class="signature-grid" aria-label="Research pillars">
           <div class="signature-item">
@@ -149,8 +152,8 @@
           </div>
           <div class="signature-item">
             <span class="signature-index">03</span>
-            <h3>AI Interfaces</h3>
-            <p>Simulation and demonstration workflows that connect human behavior to learning systems.</p>
+            <h3>Robot Learning</h3>
+            <p>VR teleoperation and gaze-labeled data collection for humanoid robots in Isaac Sim, feeding world-model and imitation-learning pipelines.</p>
           </div>
         </div>
       </section>
@@ -174,6 +177,13 @@
             <div class="impact-number">80% to 97%+</div>
             <h3>Distance-judgment accuracy</h3>
             <p>Quantified how pre-experiment walking can substantially improve VR distance perception accuracy.</p>
+          </article>
+
+          <article class="impact-item">
+            <div class="impact-context">Embodied AI</div>
+            <div class="impact-number">100 Hz</div>
+            <h3>Gaze-labeled robot datasets</h3>
+            <p>Built a VR teleoperation lab for a Unitree H1 humanoid in Isaac Sim that records synchronized multimodal sessions with zero manual annotation.</p>
           </article>
 
           <article class="impact-item">
@@ -227,8 +237,9 @@
           controlled experiments, and the software pipelines required to run studies reliably at interactive frame rates.
         </p>
         <p>
-          Recently, I have been extending this foundation toward gaze-aware rendering (eye-tracked focus and blur control),
-          and toward simulation and data collection pipelines that support robotics learning in environments like Isaac Sim.
+          Recently, I have been extending this foundation in two directions: gaze-aware rendering (eye-tracked focus and blur
+          control in FocusWeave), and embodied robotics &mdash; a VR teleoperation and gaze-driven data-collection lab for the
+          Unitree H1 humanoid built on NVIDIA Isaac Sim, where human attention becomes annotation-free supervision for robot learning.
         </p>
 
         <div class="callouts">
@@ -236,6 +247,7 @@
             <div class="callout-title">Core strengths</div>
             <ul>
               <li>Unity VR prototyping with robust experiment logic</li>
+              <li>Robotics simulation and teleoperation (Isaac Sim, OpenXR, PhysX)</li>
               <li>Graphics systems and shader work (OpenGL / GLSL, Unity shaders)</li>
               <li>End-to-end experiment pipelines (instrumentation, logging, analysis)</li>
               <li>Applied ML and analytics experience from industry internships</li>
@@ -246,6 +258,7 @@
             <div class="callout-title">Tooling</div>
             <ul>
               <li>Unity, C#, shaders</li>
+              <li>Isaac Sim / Omniverse, OpenXR</li>
               <li>Python (NumPy, SciPy, Pandas)</li>
               <li>OpenGL / GLSL</li>
               <li>Data logging and analysis workflows</li>
@@ -255,7 +268,97 @@
       </section>
 
       <section class="section" id="work">
-        <h2>Current work</h2>
+        <h2>Featured projects</h2>
+
+        <div class="item featured-project">
+          <div class="project-heading">
+            <div>
+              <p class="project-label">Featured project</p>
+              <h3>Isaac Sim Humanoid Behavior Lab</h3>
+            </div>
+            <span class="project-pill">VR teleoperation &times; robot learning</span>
+          </div>
+          <p class="muted">
+            A VR-based teleoperation and data-collection system for the Unitree H1 humanoid, built on NVIDIA Isaac Sim 6.0.
+            I embody the robot from its eye-level, first-person perspective through a Meta Quest Pro, and every session produces
+            a synchronized, gaze-labeled multimodal dataset for embodied-AI research.
+          </p>
+
+          <ul>
+            <li><strong>Gaze-driven object selection:</strong> calibrated binocular gaze is raycast into the PhysX scene (with self-hit filtering), highlighting attended objects and logging 3D gaze-collision points &mdash; visual-attention supervision with zero manual annotation.</li>
+            <li><strong>Embodied teleoperation:</strong> OpenXR head and hand tracking drives the H1&rsquo;s arms while the robot keeps balance, with physics-based grabbing and experimental step-in-place locomotion.</li>
+            <li><strong>Crash-safe recording:</strong> ~100 Hz synchronized streams (HMD pose, hand poses, gaze, object states, full joint angles) plus first-person video, time-aligned automatically per session.</li>
+            <li><strong>Learning pipeline:</strong> a phased roadmap from synchronized datasets and CSV baselines to frozen V-JEPA&nbsp;2 embeddings, action-conditioned latent world models, and MPC planning.</li>
+          </ul>
+
+          <div class="pipeline" aria-label="Data-to-learning pipeline">
+            <span>Embodied VR control</span>
+            <span>Gaze-labeled attention</span>
+            <span>100 Hz multimodal logs</span>
+            <span>World-model learning</span>
+          </div>
+
+          <div class="project-tags" aria-label="Isaac Sim Humanoid Behavior Lab stack">
+            <span>Isaac Sim 6.0</span>
+            <span>OpenXR</span>
+            <span>Quest Pro eye tracking</span>
+            <span>Unitree H1</span>
+            <span>PhysX</span>
+            <span>Python &amp; C++</span>
+          </div>
+
+          <div class="project-demo-head">
+            <span>Live demos</span>
+            <span>Captured in-headset, real time</span>
+          </div>
+
+          <div class="project-demos" aria-label="Isaac Sim Humanoid Behavior Lab demos">
+            <figure class="project-demo project-demo-wide demo-stereo">
+              <video class="project-video" controls preload="none" playsinline muted loop
+                     poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-object-selection.jpg"
+                     aria-label="Gaze-driven object selection through the robot's eyes">
+                <source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-object-selection.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>
+                <strong>Through the robot&rsquo;s eyes.</strong> The calibrated gaze raycast locks onto a cube &mdash; yellow highlight,
+                red gaze-collision marker &mdash; and the H1&rsquo;s arms reach in to grab it. Stereo OpenXR view, running live on a Quest Pro.
+              </figcaption>
+            </figure>
+
+            <figure class="project-demo demo-mono">
+              <video class="project-video" controls preload="none" playsinline muted loop
+                     poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/embodied-teleoperation.jpg"
+                     aria-label="Embodied arm teleoperation with live gaze cursor">
+                <source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/embodied-teleoperation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>
+                <strong>Embodied teleoperation.</strong> OpenXR hand poses drive the H1&rsquo;s arms while the red gaze cursor tracks
+                live eye movement across the scene.
+              </figcaption>
+            </figure>
+
+            <figure class="project-demo demo-mono">
+              <video class="project-video" controls preload="none" playsinline muted loop
+                     poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-raycast-minimal.jpg"
+                     aria-label="Gaze raycast visualized in minimal render mode">
+                <source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-raycast-minimal.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>
+                <strong>Gaze raycast, visualized.</strong> In minimal render mode the ray from the robot&rsquo;s eyes tags the attended
+                cube as the humanoid reaches toward it.
+              </figcaption>
+            </figure>
+          </div>
+
+          <p>
+            <a href="https://github.com/soheilAppear/IsaacSim-HumanoidBehavior" target="_blank" rel="noopener noreferrer">
+              View project on GitHub
+            </a>
+          </p>
+        </div>
 
         <div class="item featured-project">
           <div class="project-heading">
@@ -289,7 +392,7 @@
 
           <div class="project-demos" aria-label="FocusWeave demos">
             <figure class="project-demo">
-              <video class="project-video" controls preload="metadata" playsinline aria-label="FocusWeave demo 1">
+              <video class="project-video" controls preload="none" playsinline poster="ProjectDemos/FocusWeave/part_001_poster.jpg" aria-label="FocusWeave demo 1">
                 <source src="ProjectDemos/FocusWeave/part_001.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -297,7 +400,7 @@
             </figure>
 
             <figure class="project-demo">
-              <video class="project-video" controls preload="metadata" playsinline aria-label="FocusWeave demo 2">
+              <video class="project-video" controls preload="none" playsinline poster="ProjectDemos/FocusWeave/part_002_poster.jpg" aria-label="FocusWeave demo 2">
                 <source src="ProjectDemos/FocusWeave/part_002.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -305,7 +408,7 @@
             </figure>
 
             <figure class="project-demo">
-              <video class="project-video" controls preload="metadata" playsinline aria-label="FocusWeave demo 3">
+              <video class="project-video" controls preload="none" playsinline poster="ProjectDemos/FocusWeave/part_003_poster.jpg" aria-label="FocusWeave demo 3">
                 <source src="ProjectDemos/FocusWeave/part_003.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -313,7 +416,7 @@
             </figure>
 
             <figure class="project-demo">
-              <video class="project-video" controls preload="metadata" playsinline aria-label="FocusWeave demo 4">
+              <video class="project-video" controls preload="none" playsinline poster="ProjectDemos/FocusWeave/part_004_poster.jpg" aria-label="FocusWeave demo 4">
                 <source src="ProjectDemos/FocusWeave/part_004.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -321,7 +424,7 @@
             </figure>
 
             <figure class="project-demo">
-              <video class="project-video" controls preload="metadata" playsinline aria-label="FocusWeave demo 5">
+              <video class="project-video" controls preload="none" playsinline poster="ProjectDemos/FocusWeave/part_005_poster.jpg" aria-label="FocusWeave demo 5">
                 <source src="ProjectDemos/FocusWeave/part_005.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -329,7 +432,7 @@
             </figure>
 
             <figure class="project-demo">
-              <video class="project-video" controls preload="metadata" playsinline aria-label="FocusWeave demo 6">
+              <video class="project-video" controls preload="none" playsinline poster="ProjectDemos/FocusWeave/part_006_poster.jpg" aria-label="FocusWeave demo 6">
                 <source src="ProjectDemos/FocusWeave/part_006.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -337,7 +440,7 @@
             </figure>
 
             <figure class="project-demo">
-              <video class="project-video" controls preload="metadata" playsinline aria-label="FocusWeave demo 7">
+              <video class="project-video" controls preload="none" playsinline poster="ProjectDemos/FocusWeave/part_007_poster.jpg" aria-label="FocusWeave demo 7">
                 <source src="ProjectDemos/FocusWeave/part_007.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -345,7 +448,7 @@
             </figure>
 
             <figure class="project-demo">
-              <video class="project-video" controls preload="metadata" playsinline aria-label="FocusWeave demo 8">
+              <video class="project-video" controls preload="none" playsinline poster="ProjectDemos/FocusWeave/part_008_poster.jpg" aria-label="FocusWeave demo 8">
                 <source src="ProjectDemos/FocusWeave/part_008.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -353,7 +456,7 @@
             </figure>
 
             <figure class="project-demo">
-              <video class="project-video" controls preload="metadata" playsinline aria-label="FocusWeave demo 9">
+              <video class="project-video" controls preload="none" playsinline poster="ProjectDemos/FocusWeave/part_009_poster.jpg" aria-label="FocusWeave demo 9">
                 <source src="ProjectDemos/FocusWeave/part_009.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -368,17 +471,6 @@
           </p>
         </div>
 
-        <div class="item">
-          <h3>VR to Isaac Sim data pipelines for robot learning</h3>
-          <p class="muted">
-            Human-in-the-loop teleoperation and demonstration collection to evaluate whether VR data improves learning on manipulation tasks.
-          </p>
-          <ul>
-            <li>Interaction design for reliable demonstrations</li>
-            <li>Structured datasets for training and evaluation</li>
-            <li>Simulation and validation mindset (repeatable runs)</li>
-          </ul>
-        </div>
       </section>
 
       <section class="section" id="experience">
@@ -756,6 +848,31 @@
       }
 
       window.addEventListener('blur', hideCursor);
+    }());
+
+    (function () {
+      const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+      if (!tocLinks.length || !('IntersectionObserver' in window)) return;
+
+      const sectionToLink = new Map();
+      tocLinks.forEach(function (link) {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (section) sectionToLink.set(section, link);
+      });
+
+      let activeLink = null;
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          if (activeLink) activeLink.classList.remove('is-active');
+          activeLink = sectionToLink.get(entry.target);
+          if (activeLink) activeLink.classList.add('is-active');
+        });
+      }, { rootMargin: '-15% 0px -70% 0px' });
+
+      sectionToLink.forEach(function (_link, section) {
+        observer.observe(section);
+      });
     }());
   </script>
 </body>
