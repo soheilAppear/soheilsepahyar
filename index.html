@@ -84,6 +84,29 @@
 <figure><video controls preload="none" playsinline poster="ProjectDemos/FocusWeave/part_009_poster.jpg" aria-label="FocusWeave demo 9"><source src="ProjectDemos/FocusWeave/part_009.mp4" type="video/mp4"><a href="ProjectDemos/FocusWeave/part_009.mp4">Watch the recording</a>.</video><figcaption>09 / FocusWeave</figcaption></figure>
     </div></div></details>
   </article>
+  <article class="project" id="intuitionos" aria-labelledby="intuitionos-title">
+    <div class="project-copy">
+      <div class="project-eyebrow"><span>PROJECT 03</span><span>SIDE PROJECT / HUMAN–AI INTERACTION</span></div>
+      <h3 id="intuitionos-title">An interface that<br>learns your rhythm.</h3>
+      <p class="project-name">IntuitionOS</p>
+      <p>I’m building a local shell assistant and ambient desktop HUD that learns command patterns, suggests next actions, and shows corrections before submission. IntuitionOS combines local AI, contextual memory, and explicit action review to explore how interfaces can anticipate intent while keeping the user in control.</p>
+      <dl class="project-facts"><div><dt>INTERFACE</dt><dd>Electron desktop overlay + terminal</dd></div><div><dt>LEARNING</dt><dd>Command patterns and contextual recall</dd></div><div><dt>CONTROL</dt><dd>Visible corrections and action approval</dd></div></dl>
+      <div class="tags"><span>Python</span><span>Electron</span><span>FastAPI</span><span>Ollama</span><span>SQLite</span></div>
+      <a class="text-link" href="https://github.com/soheilAppear/IntuitionOS/tree/integrate-main" target="_blank" rel="noopener">Explore the repository ↗</a>
+    </div>
+    <div class="project-media">
+      <div class="media-label"><span>INTERFACE PREVIEW</span><span>03 / INTUITIONOS</span></div>
+      <figure><img class="project-screenshot" src="assets/intuitionos/hud-correction.png" width="680" height="260" loading="lazy" decoding="async" alt="IntuitionOS command-correction preview highlighting python as the suggested correction for pyhton, with an option to keep the original command."><figcaption>Review before acting. This interface demonstration highlights a proposed correction while keeping the original command available.</figcaption></figure>
+      <div class="media-readout"><span>CONTEXT</span><span aria-hidden="true">→</span><span>SUGGESTION</span><span aria-hidden="true">→</span><span>USER REVIEW</span></div>
+    </div>
+    <details class="project-details">
+      <summary>Inside IntuitionOS <span>Local learning + the live HUD</span><span class="details-icon" aria-hidden="true">+</span></summary>
+      <div class="details-body"><div class="detail-columns">
+        <div><h4>Anticipation, with visible intent.</h4><p>The Electron HUD and terminal share a Python core. Command history and context inform suggestions, Ollama provides local model inference, and SQLite stores memory. Proposed corrections remain visible before submission; irreversible actions require explicit approval.</p><p><a class="text-link" href="https://github.com/soheilAppear/IntuitionOS/blob/integrate-main/docs/architecture.md" target="_blank" rel="noopener">Read the architecture notes ↗</a></p></div>
+        <figure><img class="project-screenshot" src="assets/intuitionos/hud-live-chat.png" width="680" height="416" loading="lazy" decoding="async" alt="IntuitionOS desktop HUD showing a response from its local language model."><figcaption>The IntuitionOS HUD responding through its live local backend.</figcaption></figure>
+      </div></div>
+    </details>
+  </article>
 </div></section>
 
 <section class="impact-section" id="impact" aria-labelledby="impact-title"><div class="wrap">
