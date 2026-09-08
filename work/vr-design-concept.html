@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap">
+<style>
+#ss-vr-concept{--ss-paper:#eeecdf;--ss-ink:#242b25;--ss-rust:#ad442a;--ss-screen:#19291f;--ss-phosphor:#e78f50;--ss-pale:#d1d9bc;background:var(--ss-paper);color:var(--ss-ink);padding:28px;font-family:'DM Sans',sans-serif;box-sizing:border-box}
+#ss-vr-concept *{box-sizing:border-box}
+#ss-vr-concept .ss-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-bottom:1px solid #bbc0ad;padding-bottom:16px;font:11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.04em}
+#ss-vr-concept .ss-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:center;padding-top:25px}
+#ss-vr-concept .ss-kicker{font:11px/1.7 'IBM Plex Mono',monospace;color:var(--ss-rust);margin:0 0 17px}
+#ss-vr-concept h2{font:500 clamp(32px,5vw,46px)/1.04 'Space Grotesk',sans-serif;letter-spacing:-.055em;margin:0}
+#ss-vr-concept h2 span{display:block;color:var(--ss-rust);margin-top:5px}
+#ss-vr-concept .ss-copy{font:400 14px/1.7 'DM Sans',sans-serif;color:#596055;margin:20px 0 0}
+#ss-vr-concept .ss-instrument{min-width:0;background:#263329;color:var(--ss-pale);padding:13px;border:1px solid #14221a;border-radius:10px;box-shadow:5px 6px 0 #d5d7c7}
+#ss-vr-concept .ss-instrument-header{display:flex;justify-content:space-between;gap:8px;font:11px/1.5 'IBM Plex Mono',monospace;margin:0 0 12px}
+#ss-vr-concept .ss-screen{background:var(--ss-screen);border:1px solid #64715b;border-radius:32% / 5%;overflow:hidden}
+#ss-vr-concept canvas{display:block;width:100%;height:225px}
+#ss-vr-concept .ss-modes{display:flex;gap:6px;margin-top:12px}
+#ss-vr-concept button{flex:1;min-height:44px;padding:8px 6px;font:11px/1.5 'IBM Plex Mono',monospace;border:1px solid #748164;background:#303f30;color:#e2e3cf;cursor:pointer}
+#ss-vr-concept button[aria-pressed="true"]{background:#d8d8bb;color:#293527;border-color:#e9e6cf}
+#ss-vr-concept .ss-distance{display:block;margin-top:15px;font:11px/1.5 'IBM Plex Mono',monospace}
+#ss-vr-concept .ss-range-caption{display:flex;justify-content:space-between;gap:12px}
+#ss-vr-concept input{display:block;width:100%;margin:10px 0 0;accent-color:#e78f50;min-height:24px;cursor:pointer}
+#ss-vr-concept .ss-caption{font:11px/1.6 'IBM Plex Mono',monospace;margin:12px 0 0;color:#d1d9bc}
+@media(max-width:640px){#ss-vr-concept{padding:20px}#ss-vr-concept .ss-layout{grid-template-columns:1fr;gap:24px}#ss-vr-concept h2{font-size:40px}#ss-vr-concept .ss-copy{max-width:420px}#ss-vr-concept canvas{height:230px}}
+</style>
+<section id="ss-vr-concept" aria-label="Proposed VR hero design">
+  <div class="ss-top"><span>SOHEIL SEPAHYAR</span><span>DESIGN CONCEPT / 01</span></div>
+  <div class="ss-layout">
+    <div>
+      <p class="ss-kicker">VIRTUAL REALITY<br>HUMAN–COMPUTER INTERACTION</p>
+      <h2>Human<br>perception.<span data-headline>Virtual<br>worlds.</span></h2>
+      <p class="ss-copy">I study how we perceive virtual worlds, and build immersive systems that connect attention, action, and intelligence.</p>
+    </div>
+    <div class="ss-instrument" aria-label="Spatial perception instrument">
+      <div class="ss-instrument-header"><span>SPATIAL PERCEPTION</span><span>SS—01</span></div>
+      <div class="ss-screen"><canvas role="img" aria-label="Illustrative virtual room with a distance target. Adjust target depth or switch to two eye views.">A perspective floor and wireframe target illustrate a VR distance experiment.</canvas></div>
+      <div class="ss-modes" role="group" aria-label="View mode"><button type="button" data-view="room" aria-pressed="true">Experiment room</button><button type="button" data-view="stereo" aria-pressed="false">Stereo view</button></div>
+      <label class="ss-distance"><span class="ss-range-caption"><span>TARGET DEPTH</span><span>NEAR → FAR</span></span><input type="range" min="3" max="9" step="0.1" value="5" aria-label="Target depth, illustrative relative units"></label>
+      <p class="ss-caption" aria-live="polite">VR distance experiment · illustrative scene</p>
+    </div>
+  </div>
+</section>
+<script>
+(() => {
+  const root=document.getElementById('ss-vr-concept');
+  const canvas=root.querySelector('canvas');
+  const ctx=canvas.getContext('2d');
+  const depth=root.querySelector('input');
+  const buttons=[...root.querySelectorAll('[data-view]')];
+  const caption=root.querySelector('.ss-caption');
+  const design={headline:'worlds',phosphor:'#e78f50'};
+  let mode='room';
+  function draw(){
+    if(!ctx)return;
+    const width=canvas.clientWidth,height=canvas.clientHeight;
+    if(!width||!height)return;
+    const ratio=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);
+    ctx.setTransform(ratio,0,0,ratio,0,0);
+    ctx.clearRect(0,0,width,height);
+    const z=Number(depth.value);
+    function viewport(left,w,eye,label){
+      ctx.save();ctx.beginPath();ctx.rect(left,0,w,height);ctx.clip();
+      const scale=Math.min(w*.87,height*.84);
+      function p(x,y,d){return [left+w*.5+(x-eye)*scale/d,height*.43-y*scale/d];}
+      function segment(a,b,color,lineWidth=1){ctx.strokeStyle=color;ctx.lineWidth=lineWidth;ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.stroke();}
+      for(let x=-5;x<=5;x++)segment(p(x,-1,1),p(x,-1,13),'#526343');
+      for(let d=2;d<=13;d++)segment(p(-5,-1,d),p(5,-1,d),'#526343');
+      const room=[[-3,-1,10],[3,-1,10],[3,2,10],[-3,2,10]];
+      room.forEach((a,i)=>segment(p(...a),p(...room[(i+1)%4]),'#708161'));
+      segment(p(-3,-1,10),p(-3,2,2),'#465a3c');segment(p(3,-1,10),p(3,2,2),'#465a3c');
+      const v=[[-.55,-1,z],[.55,-1,z],[.55,.1,z],[-.55,.1,z],[-.55,-1,z+1.1],[.55,-1,z+1.1],[.55,.1,z+1.1],[-.55,.1,z+1.1]];
+      const edges=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+      edges.forEach(([a,b])=>segment(p(...v[a]),p(...v[b]),design.phosphor,1.4));
+      const center=p(0,-.45,z);ctx.strokeStyle='#d5dec6';ctx.lineWidth=1;ctx.beginPath();ctx.arc(...center,5,0,Math.PI*2);ctx.stroke();
+      if(mode==='room'){
+        ctx.setLineDash([3,5]);segment([left+w*.33,height-24],center,'#a9b68a');segment([left+w*.67,height-24],center,'#a9b68a');ctx.setLineDash([]);
+        ctx.fillStyle='#d1d9bc';ctx.font="11px 'IBM Plex Mono',monospace";ctx.textAlign='center';ctx.fillText('L',left+w*.33,height-10);ctx.fillText('R',left+w*.67,height-10);
+      }
+      ctx.fillStyle='#d1d9bc';ctx.font="11px 'IBM Plex Mono',monospace";ctx.textAlign='left';ctx.fillText(label,left+12,23);
+      ctx.restore();
+    }
+    if(mode==='stereo'){
+      viewport(0,(width-8)/2,-.22,'LEFT EYE');viewport((width+8)/2,(width-8)/2,.22,'RIGHT EYE');
+      ctx.strokeStyle='#6e7c5f';ctx.beginPath();ctx.moveTo(width/2,35);ctx.lineTo(width/2,height-16);ctx.stroke();
+    }else viewport(0,width,0,'VR / DISTANCE TARGET');
+  }
+  buttons.forEach(button=>button.addEventListener('click',()=>{
+    mode=button.dataset.view;
+    buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+    caption.textContent=mode==='stereo'?'Two eye views · illustrative stereo pair':'VR distance experiment · illustrative scene';
+    draw();
+  }));
+  depth.addEventListener('input',draw);
+  function renderDesign(){
+    root.querySelector('[data-headline]').innerHTML=design.headline==='worlds'?'Virtual<br>worlds.':'Spatial<br>interfaces.';
+    root.style.setProperty('--ss-phosphor',design.phosphor);draw();
+  }
+  renderDesign();
+  if(globalThis.ResizeObserver)new ResizeObserver(draw).observe(canvas);
+  if(globalThis.Tweak){
+    const tweak=new Tweak({container:root,onChange:renderDesign});
+    tweak.addSelect(design,'headline',{label:'Headline direction',options:[{label:'Virtual worlds',value:'worlds'},{label:'Spatial interfaces',value:'interfaces'}]});
+    tweak.addSelect(design,'phosphor',{label:'Target color',options:[{label:'Warm amber',value:'#e78f50'},{label:'Phosphor green',value:'#bcca9f'}]});
+  }
+})();
+</script>
