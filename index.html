@@ -56,16 +56,103 @@
 <section class="work-section" id="work" aria-labelledby="work-title"><div class="wrap">
   <div class="section-heading"><p class="eyebrow">02 / SELECTED WORK</p><span class="section-aside">IDEAS, MADE TANGIBLE.</span></div>
   <div class="section-title-row"><h2 id="work-title">Inside the lab.</h2><p>Research software, live experiments,<br>and systems built from the ground up.</p></div>
-  <article class="project">
-    <div class="project-copy"><div class="project-eyebrow"><span>PROJECT 01</span><span>EMBODIED AI / ROBOTICS</span></div><h3>Through the<br>robot’s eyes.</h3><p class="project-name">Isaac Sim Humanoid Behavior Lab</p><p>A human perspective inside a simulated humanoid. I built a VR teleoperation system for the Unitree H1 that turns synchronized movement and gaze into multimodal research data.</p><dl class="project-facts"><div><dt>INTERFACE</dt><dd>Quest Pro + OpenXR</dd></div><div><dt>RECORDING</dt><dd>~100 Hz synchronized streams</dd></div><div><dt>SUPERVISION</dt><dd>Automatically captured gaze labels</dd></div></dl><div class="tags"><span>Isaac Sim 6.0</span><span>PhysX</span><span>Python / C++</span><span>Unitree H1</span></div><a class="text-link" href="https://github.com/soheilAppear/IsaacSim-HumanoidBehavior" target="_blank" rel="noopener">Explore the repository ↗</a></div>
-    <div class="project-media"><div class="media-label"><span><span class="record-dot" aria-hidden="true"></span> EXPERIMENT FOOTAGE</span><span>01 / GAZE SELECTION</span></div>
-      <figure><video controls preload="none" playsinline poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-object-selection.jpg" aria-label="Gaze-driven object selection in the simulated Unitree H1"><source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-object-selection.mp4" type="video/mp4"><a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-object-selection.mp4">Watch the recording</a>.</video><figcaption>Seeing, attending, reaching. Binocular gaze selects objects as tracked hand movements drive the H1’s arms. Stereo view captured in-headset.</figcaption></figure>
-      <div class="media-readout"><span>HUMAN INPUT</span><span aria-hidden="true">→</span><span>SIMULATED ACTION</span><span aria-hidden="true">→</span><span>LEARNING DATA</span></div>
+  <article class="project" id="humanoid-robot">
+    <div class="project-copy">
+      <div class="project-eyebrow"><span>PROJECT 01</span><span>EMBODIED AI / ROBOTICS</span></div>
+      <h3>Through the<br>robot’s eyes.</h3>
+      <p class="project-name">Isaac Sim Humanoid Behavior Lab</p>
+      <p>A human perspective inside a simulated humanoid. I built a Quest Pro teleoperation system for the Unitree G1, connecting tracked hands and fingers, controller-driven walking, physical object interaction, and gaze-aware research data.</p>
+      <dl class="project-facts">
+        <div><dt>INTERFACE</dt><dd>Quest Pro + OpenXR</dd></div>
+        <div><dt>MANIPULATION</dt><dd>Optical hands or VR controllers</dd></div>
+        <div><dt>LOCOMOTION</dt><dd>Joystick-guided G1 walking policy</dd></div>
+      </dl>
+      <div class="tags"><span>Isaac Sim 6.1</span><span>Unitree G1</span><span>PhysX</span><span>Hand + eye tracking</span></div>
+      <a class="text-link" href="https://github.com/soheilAppear/IsaacSim-HumanoidBehavior" target="_blank" rel="noopener">Explore the repository ↗</a>
     </div>
-    <details class="project-details"><summary>Inside the system <span>Technical notes + 2 more recordings</span><span class="details-icon" aria-hidden="true">+</span></summary><div class="details-body"><div class="detail-columns"><div><h4>Attention, recorded in context.</h4><p>Calibrated binocular gaze is raycast into the PhysX scene with self-hit filtering. Attended objects and 3D gaze-collision points are logged automatically, providing attention labels without manual annotation.</p></div><div><h4>Embodied control, synchronized data.</h4><p>OpenXR head and hand poses drive arm teleoperation, physics-based grabbing, and experimental step-in-place locomotion. Crash-safe sessions align HMD, hands, gaze, object states, joints, and first-person video.</p></div></div><p class="roadmap-note"><strong>Learning roadmap.</strong> These datasets form the foundation for planned work with frozen V-JEPA 2 embeddings, action-conditioned latent world models, and model-predictive control.</p><div class="demo-grid">
-      <figure><video controls preload="none" playsinline poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/embodied-teleoperation.jpg" aria-label="Embodied arm teleoperation"><source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/embodied-teleoperation.mp4" type="video/mp4"><a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/embodied-teleoperation.mp4">Watch the recording</a>.</video><figcaption>02 / Embodied teleoperation. Hand poses control the arms while a gaze cursor follows attention.</figcaption></figure>
-      <figure><video controls preload="none" playsinline poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-raycast-minimal.jpg" aria-label="Gaze raycast in minimal render mode"><source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-raycast-minimal.mp4" type="video/mp4"><a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-raycast-minimal.mp4">Watch the recording</a>.</video><figcaption>03 / Gaze raycast. Minimal rendering reveals the attention ray and object selection.</figcaption></figure>
-    </div></div></details>
+    <div class="project-media">
+      <div class="media-label"><span><span class="record-dot" aria-hidden="true"></span> G1 + OPERATOR VIEW</span><span>20 SEP 2026 / 43.5 SECONDS</span></div>
+      <figure>
+        <video controls preload="none" playsinline width="1600" height="900" poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-carton-lift-webcam.png" aria-label="G1 teleoperation highlights: carton lift, hand tracking, factory walking, and small-object pickup, with operator webcam">
+          <source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-quest-webcam-highlights.mp4" type="video/mp4">
+          <a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-quest-webcam-highlights.mp4">Watch the G1 highlights</a>.
+        </video>
+        <figcaption>From human movement to robot action. Selected carton-lift, finger-tracking, walking, and small-object pickup moments, with synchronized operator and simulation views. Recorded September 20, 2026; normal speed, no audio.</figcaption>
+      </figure>
+      <div class="media-readout"><span>HUMAN INPUT</span><span aria-hidden="true">→</span><span>SIMULATED ACTION</span><span aria-hidden="true">→</span><span>RESEARCH DATA</span></div>
+    </div>
+    <details class="project-details">
+      <summary>Explore the G1 demo <span>4 clips, screenshots + technical notes</span><span class="details-icon" aria-hidden="true">+</span></summary>
+      <div class="details-body">
+        <div class="detail-columns">
+          <div><h4>Hands, fingers, and physical contact.</h4><p>Quest optical tracking maps wrist poses and individual finger curls onto the robot. Controllers offer grip-controlled arm movement and trigger-controlled finger closure. Grasping uses physical contact and friction; these clips show selected successful interactions in an experimental system.</p></div>
+          <div><h4>Walking, gaze, and the operator view.</h4><p>The left stick moves the G1 and the right stick turns it through a pretrained GR00T Whole-Body Control walking policy. Gaze tracking and synchronized logging support attention research. In the current setup, the external webcam displays the operator and landmarks for recording; robot arms and fingers use Quest tracking or controllers.</p></div>
+        </div>
+        <p class="roadmap-note"><strong>Research direction.</strong> Explore gaze and hand/finger velocity as cues for grasp intent, alongside future learning from recorded demonstrations. The walking policy is pretrained; a new grasp-intent training pipeline is planned.</p>
+        <h4 class="demo-heading">Watch individual moments.</h4>
+        <div class="demo-grid">
+          <figure>
+            <video controls preload="none" playsinline width="1600" height="900" poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-carton-lift-webcam.png" aria-label="G1 carton lift with synchronized operator webcam">
+              <source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-carton-lift-webcam.mp4" type="video/mp4">
+              <a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-carton-lift-webcam.mp4">Watch carton lift</a>.
+            </video>
+            <figcaption><strong>Carton lift · 9 seconds.</strong> A carton lifted and held in the robot hands, with the operator visible alongside the simulation.</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="none" playsinline width="1600" height="900" poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-hand-tracking-webcam.png" aria-label="G1 hand and finger tracking with synchronized operator webcam">
+              <source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-hand-tracking-webcam.mp4" type="video/mp4">
+              <a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-hand-tracking-webcam.mp4">Watch hand and finger tracking</a>.
+            </video>
+            <figcaption><strong>Hand and finger tracking · 12 seconds.</strong> Tracked hand and finger movements shown beside the operator’s webcam view.</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="none" playsinline width="1600" height="900" poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-factory-walking-webcam.png" aria-label="G1 factory walking with synchronized operator webcam">
+              <source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-factory-walking-webcam.mp4" type="video/mp4">
+              <a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-factory-walking-webcam.mp4">Watch factory walking</a>.
+            </video>
+            <figcaption><strong>Factory walking · 9.5 seconds.</strong> The G1 moves through the factory with the operator visible in the same recording.</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="none" playsinline width="1600" height="900" poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-small-object-webcam.png" aria-label="G1 small-object pickup with synchronized operator webcam">
+              <source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-small-object-webcam.mp4" type="video/mp4">
+              <a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-small-object-webcam.mp4">Watch small-object pickup</a>.
+            </video>
+            <figcaption><strong>Small-object pickup · 13 seconds.</strong> A small object grasped and lifted during the teleoperation session.</figcaption>
+          </figure>
+        </div>
+        <h4 class="demo-heading">Screenshots from the recording.</h4>
+        <p>Open any image to view the full-size capture.</p>
+        <div class="demo-grid project-screenshots">
+          <figure>
+            <a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-carton-lift-webcam.png" target="_blank" rel="noopener" aria-label="Open full-size carton lift screenshot (new tab)"><img src="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-carton-lift-webcam.png" alt="A carton lifted and held in the robot hands, with the operator visible alongside the simulation." width="1600" height="900" loading="lazy" decoding="async"></a>
+            <figcaption>Carton lift</figcaption>
+          </figure>
+          <figure>
+            <a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-hand-tracking-webcam.png" target="_blank" rel="noopener" aria-label="Open full-size hand and finger tracking screenshot (new tab)"><img src="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-hand-tracking-webcam.png" alt="Tracked hand and finger movements shown beside the operator’s webcam view." width="1600" height="900" loading="lazy" decoding="async"></a>
+            <figcaption>Hand and finger tracking</figcaption>
+          </figure>
+          <figure>
+            <a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-factory-walking-webcam.png" target="_blank" rel="noopener" aria-label="Open full-size factory walking screenshot (new tab)"><img src="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-factory-walking-webcam.png" alt="The G1 moves through the factory with the operator visible in the same recording." width="1600" height="900" loading="lazy" decoding="async"></a>
+            <figcaption>Factory walking</figcaption>
+          </figure>
+          <figure>
+            <a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-small-object-webcam.png" target="_blank" rel="noopener" aria-label="Open full-size small-object pickup screenshot (new tab)"><img src="ProjectDemos/IsaacSim-HumanoidBehavior/web/g1-small-object-webcam.png" alt="A small object grasped and lifted during the teleoperation session." width="1600" height="900" loading="lazy" decoding="async"></a>
+            <figcaption>Small-object pickup</figcaption>
+          </figure>
+        </div>
+      </div>
+    </details>
+    <details class="project-details">
+      <summary>Earlier H1 experiments <span>July 2026 / 3 archived recordings</span><span class="details-icon" aria-hidden="true">+</span></summary>
+      <div class="details-body">
+        <p>Earlier Unitree H1 experiments in Isaac Sim 6.0 document gaze selection and arm teleoperation. They precede the G1 system shown above.</p>
+        <div class="demo-grid">
+          <figure><video controls preload="none" playsinline poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-object-selection.jpg" aria-label="Archived H1 gaze selection"><source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-object-selection.mp4" type="video/mp4"><a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-object-selection.mp4">Watch the archived recording</a>.</video><figcaption><strong>Gaze selection.</strong> Binocular gaze selects objects as tracked hand movements drive the H1’s arms.</figcaption></figure>
+          <figure><video controls preload="none" playsinline poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/embodied-teleoperation.jpg" aria-label="Archived H1 embodied teleoperation"><source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/embodied-teleoperation.mp4" type="video/mp4"><a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/embodied-teleoperation.mp4">Watch the archived recording</a>.</video><figcaption><strong>Embodied teleoperation.</strong> Hand poses control the arms while a gaze cursor follows attention.</figcaption></figure>
+          <figure><video controls preload="none" playsinline poster="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-raycast-minimal.jpg" aria-label="Archived H1 gaze raycast"><source src="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-raycast-minimal.mp4" type="video/mp4"><a href="ProjectDemos/IsaacSim-HumanoidBehavior/web/gaze-raycast-minimal.mp4">Watch the archived recording</a>.</video><figcaption><strong>Gaze raycast.</strong> Minimal rendering reveals the attention ray and object selection.</figcaption></figure>
+        </div>
+      </div>
+    </details>
   </article>
   <article class="project">
     <div class="project-copy"><div class="project-eyebrow"><span>PROJECT 02</span><span>VR / GAZE-AWARE RENDERING</span></div><h3>A world that<br>follows attention.</h3><p class="project-name">FocusWeave</p><p>What changes when a virtual world responds to where we look? FocusWeave brings eye-tracked focus and gaze-contingent blur into Unity for perceptual evaluation in VR distance-judgment tasks.</p><dl class="project-facts"><div><dt>INPUT</dt><dd>Meta Quest Pro eye tracking</dd></div><div><dt>RENDERING</dt><dd>Gaze-contingent focus + blur</dd></div><div><dt>EXPERIMENTS</dt><dd>Stable parameters, analysis-ready logs</dd></div></dl><div class="tags"><span>Unity</span><span>C# / Shaders</span><span>Eye tracking</span></div><a class="text-link" href="https://github.com/soheilAppear/FocusWeave" target="_blank" rel="noopener">Explore the repository ↗</a></div>
